@@ -1,0 +1,3213 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[    161622,       3203]
+NotebookOptionsPosition[    160097,       3168]
+NotebookOutlinePosition[    160604,       3186]
+CellTagsIndexPosition[    160561,       3183]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Hello. I would like to plan an outage of my generator asset. Can you help me \
+with that?\
+\>", "ChatInput",
+ CellDingbat->Cell[
+   BoxData[
+    DynamicBox[
+     ToBoxes[
+      If[
+       TrueQ[CloudSystem`$CloudNotebooks], 
+       RawBoxes[
+        TemplateBox[{}, "ChatIconUser"]], 
+       RawBoxes[
+        TemplateBox[{}, "ChatInputCellDingbat"]]], StandardForm]]], 
+   Background -> None, CellFrame -> 0, CellMargins -> 0],
+ CellChangeTimes->{3.9555329613667927`*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"b9cd975f-aa20-774e-a1d1-ea443f644fa4"],
+
+Cell[TextData[{
+ "Of course! To help you plan the outage for your generator asset, I'll need \
+the following information:\n\n1. ",
+ StyleBox["Starting week",
+  FontWeight->Bold],
+ ": A number between 1 and 50 indicating when you want the outage to begin.\n\
+2. ",
+ StyleBox["Duration",
+  FontWeight->Bold],
+ ": The duration of the outage in weeks, between 1 and 10.\n3. ",
+ StyleBox["Asset number",
+  FontWeight->Bold],
+ ": The asset number of the generator you wish to plan the outage for, which \
+should be a number between 0 and 18.\n\nOnce I have this information, we can \
+proceed with planning the outage."
+}], "ChatOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     GraphicsBox[
+      TagBox[
+       RasterBox[CompressedData["
+1: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
+tXDVcKlBCrhGKOa9RonAJy2Z8yef/IH2rn1BUxNbFAxE67peRTinARrGhHp9
+t613RinkmaJe/w4NhB41Zc4fHP2eDne/pqWFm5SIj5l+jTjZ9x7ag6KzBySf
+fzOrnj3OGAXdYxTzrVAieGjLnK9MfUbTo4c0mFikSLjmvvg7fPrzcZrsGoDW
+pwjm2lXFnT8Xma979apD+X82v80Pkd+dYNlfpN7AKqXCRzQSfWhpzucGP6ep
+5AMajbM8965TJDhIPk/FefHqfza3lwYSs7Qwczd/XqrPGxb92YzsGoDWx+rs
+pFz9udSed84/D7vWyOccZpn3WNKHfasvoXoowH4HBDxJCnnT1BdcKlqmfi60
+TMnwBo323KXByB7FQytvC6+Q5hthf3cgz+UUPsM2Mds+GhyYp+WF+++ci9wb
+GxX9vVPZNQCtTxHMweXPULyQ89J1MhHPBvlc6fz8m9X5sTM+H5ceXKS15Ue6
+55+Pp7dFXwNzcWA5Yf06V3RzXrpOhj9XC7szLPfC84VaSrx/lLXZt1mWvzO0
+7pXnfGHmgd7X7JBdB2AfSmHOTLug5nchFJ11cJrrpuGcX1wn0+u7TmHPHHld
+8Xz/W3Yu65WMj1Nm/gYdXf+mpvXtPOc769/rfY+MyTXRKbtWoer7mGFeGKzJ
+s+KfzRUzrHu/FcHY3KloFHHdrjnnF9fJxIO3qMe3wbI/xdr8qtaLNVxPZJhG
+B9doeY6NsXe+N+U9lvOcR8IDou97aiDL6eJ9PS3e59cG64HXD/oLNlX8vfzK
+hNp9XbzfJxezL/r6XnXE1JyXWyczGH5AieANivoWKeKbzs+78/n3RmTZ6w5T
+2J+iZCxDQ33rtDD6iNZnv7LsfbXznI8OXxPeI0GmjebZSA2kZdc0vJPxjMW1
+fp79sv89qK5bnnO95+djMfZ3tGMaYlLaAfUGlt6abw/70hT0JAu8A2/w+fXS
++XZuKLZH4333aKL/Hi0Mnkh5L/U855m5R5XaXjMyrScju7bhTcY7G3C/hfhz
+cs15S2rO7bIezuycX1v9Tu85eqNgbwsbUGp8p8QsHjWFnFuY84H4vOycn8mu
+8XbH7kFHpfvkcHjI0R1iwox561LPBdRl5NzCnC/OiPd/rZWq+sipRlhfTGMM
+rWfolF3r7UzR2dflyqUBuvT+HF1+P0NX3l+iKx8sU9cHK9T9YZYcH66S4/I0
+KVcmSekaJLW7hxSHr/p6yffZj5FzC3O+ufINeb3V991dzgDr88cp6B+ncDBD
+4cAyRYL7FPbtUtCzTX7XFnnVDXI71kntWiZH15De18OcnNyc75dtw7v99NEv
+FujSLxbFOf9ojZRL7B5f2iDn5U1mi1xXrpGra4GcjjTTy3Ksn313vs+OnFud
+82T/nP59cAcpGBigqDZNid4tSsWPaKD/Dvv/t6g/dkS9kRsUCx/o5Jz/3l9h
+dRMRfY+c7FpvZ4pgX5fuK1rNOXdf2SZP1w6zS97uPVYH08L6Cjo3kfMG5Dwz
++0R4D2KRSbo68ojGhz+h0cEHlB74mIYSd2vLeVcSObchUXve3RU0LeeiNt2p
+hCnsPELOG5Dz9aWvKBwqn0HelpuX8x7k3IZE43M+92ZGzt2OjLAd8alzyHkD
+cz46tCO8F4m+VXNy7vCLvkdGdq23M0Vnz4dL70/XnXNVKb/XEZ9/C6rXkfMG
+5jy7eEJeT/n1f15v1ISci3+nK9jbQjpFsBa163K8rpy7uxeF992jjFFIvYmc
+Nzjnybg4i6n4Tn05F8+3v5Zd46CzTsbhqivnqkO8b2FQ3UbOJeR8ceYpuZzl
+3+fz+/rqyrniEO6r8UJ2jYP+M/Suy4macu7uXhBm3K0MsIzfQM4l5Hx5/jkl
++sVterJvu7acdwv3rsHY3EZEfXfepl/+YL7qnKsO4XNUCijbyLnEnM9PfSZs
+092uQA05z7K/6xLd71eyaxveyrnwfbXurkjVORd9LT7/xsfmQXUfOZfUb+ft
+uSjnXH9sraqcOxXhM3MuJ7u24Z2sC989776UNiXnpXl3KykKOneR8watkxlI
+LOnm+1wkPGU45251Uu9r8Xcgsd+EzSh6Zxuy/nvXR9NV5FzYj3u3r6jG8++y
+IOfm53x+6mPq79XN4jsG+vYM5dznWql0nzOyaxqEWRfvF+XwUteHGUM5dzqq
+35+Rn9Hgd86S5jpAzuvI+c7GtzQxulPTe+fh4LCh8XnAs0Gq/r67Z7JrGXRz
+3qHo7DnB30vt/mjJ0HM1V/dUxfdYRDxqkkKuJeS8ipxn5u/nz2mo5Xrzta/x
+nqzh52r8ndQK/fVO2bUMFbOueza5ozta9XssqiJcD6mLj+P5OQ2aewM5L5Pz
+zdWn+XMa+FksNf0+ZflO9q9Vtb7d7ap4PlRGdg2D4ayX3Zf1ja4+wzn3de+T
+33GdPI6Z/LsrtdRjIfOe/DkNEc9mW+d8c/XT/DkN/CyWWq+lxxOiwcQmzUx8
+RlNjnxrOucetO7fOncquXag66/pnF3drLOdZwzn3Ow4ooByST8mSS+mvuUbP
++Zwp0jwZ6vffbemcP7jzE21kH7J2e5rlrPZsc+FggkaHrtPC9Bc0N/msqpx7
+K2f8pYL59aajFMbqL3XvrSPIcr5aVc6Dyo38Opmgyv6MmjblvMT8WejuUYr5
+1ikZvNfUOb9/6yc62H1Os1PbFArG6r82Li/19Vxl2X6cXyeTmf2yqpz3RQ9Y
+X73i50DGm1gx6/p7urOsO68sVp3z0nUyfnUhf45ivTVdmnu/e5Ai3nmKBw9Z
+5h/bNuerc09pduImDacy+bPTzLoGoWAfXR29TmuZ52+th6sm532xPZbximMt
+Pu+GPV2bHL+HSsV9n12kdk3XnPPzdTKa6zrrj0+aeg76OX4mAz+bhZ/T0B/Y
+ooHwEcv8k4blfCr1gCZTd/LnNPRq4xTy1z92ucjv02gotUTrK18K170azXlf
+bIdUtWJfCxlvIcayrpDaPVxXzkvXyUTce+R3jpNTNT/z7+SDn4fMaL6J/BkN
+3EB4h4ajtykdu00jeXdolOu5W9ZQdO/NWQ19oQUK+QbyrP7sAX+ERoZWaHP1
+C0Pr243kPBo29HwOGW9BipHxOs+6I8Iyvll3zkvXyUQ9BxR0TZNb/7lt24ho
+CRofWaWdzZOq32PRy3l64A4FfBXn27hXyHjrMpp13o93dc+alvPSdTK9vluk
+eVbz8+1qC5yNaoTH48vPt2fmj+nW4Q91va8myjnfZ4K/r2bg82DOrQ0Us27o
+DBeno4/lfNvUnF9cJ9PnY1/Du8zG3oMtk3uPx0+J+Bgtzh3Sjf2vTX0v9WLO
+r47kKKpdNfrZXiDj7UUR7An9Ljd5HAuW5fziOpl44JhiTXIm8rneaJrG0xu0
+lsnR7cPfWPr+eWnO06mD/JpXg5/zRHbNgbSs871oDJ3B6FRi5FeuWZ7zcutk
+BkK3KR7co6hvgYKeofy8m4w8a4FB6gmP03B8g+bG7tP63POG7zPBcz49niMt
+pHt+SimccQzn/Xj9tXOlfVKb7TOR0o7yEqFt6g1k8nPtEd8EBTzJvOBFJeci
+lwqdn5McXqGElqVUdIsm4h/T1cR96e+fV7PPxAV8LN4pu8bAPhTD/fjC+yle
+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
+        "], {{0, 250.}, {250., 0}}, {0, 255}, ColorFunction -> RGBColor, 
+        ImageResolution -> {72, 72}], 
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+       Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+      ImageSizeRaw -> {250., 250.}, PlotRange -> {{0, 250.}, {0, 250.}}, 
+      ImageSize -> {40.50000000000003, Automatic}], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "Of course! To help you plan the outage for your generator asset, I'll \
+need the following information:\n\n1. **Starting week**: A number between 1 \
+and 50 indicating when you want the outage to begin.\n2. **Duration**: The \
+duration of the outage in weeks, between 1 and 10.\n3. **Asset number**: The \
+asset number of the generator you wish to plan the outage for, which should \
+be a number between 0 and 18.\n\nOnce I have this information, we can proceed \
+with planning the outage.", "ChatData" -> 
+   "OEM6eJztW9tyG0d6tlcUJcI6+rD2+sJpw6zSYQFQlCXbYmnlBQ+\
+SaJMizYGsdYlasTHTAMYczCDTA4JYW4+Qi6QqF0kukgfIC+QpcpnbXKVylzxCvv/\
+v7pkBT5K866pN1bpcNjnd/fd/Pjab7br3XjOKkpGnIuVnYRIvJXGm9jN9+\
+r6MtKp7Z5qDwSPZV96ZZdWRwyire5Wm1qHOZOyrfNuF5jDrqTgLfUlQvOm1tfWvQ948zJL7SdqXmZ5\
+qpUNFN+KTJ/\
+cU7tpTqeYTOgdVWZRabaZJf5DpGdqKo6Ff9365OB5IrbeUHmC7WuopfzeMu8W5JZmpbpKGSnfe1FNr\
+QNE7uwn4SSx13Xt3qSczS91mqgaHL3ibdiyn4Z6KHyWZaifJbg78Mq09BMgkHa+puJv1vv/vU/\
+bIajwY4j8B0Z6k3tT//vPf/WvdO7+ECwC4HUZhNm6ernsfPUmiTir7azLuDmVXfQvcQPmW+\
+uthmKrAOz3/aePmr+vexY2BSnEy7npjnal+55Sl5syTMA6Skfam16W/4f3Om3och/\
+tg6MqejIbMxpV4L0yTuA9RdM64Y57SdJF3/\
+olqF1u9s4sy83tfJW1v2vPTcJB509jQ3Fz1Zrxhe1elsYrwo99TwTBSQd07txQlw8AbDgZJmkvz7H0\
+ls2EKpr9h7oOkiM1p2AZr09W4w8LHhc03mSt2SQWLY+/\
+SVwnAx2KtIZZS1Vdp3btU1orHj1eX9dSjJMZFF+\
+0CsQz4aPf9ffM9M8zaSiLVSh5rbHSye29pmKZgCKTeUfgBatuSbe+sp9K9EL/UvbeWlWYOEFu++\
+S4ZCpkqIUWWylj3Q+\
+ae0AxfJCycJBU9FQ0gIzFOhqnwoxA3aJElYhDJWMAYwlQkwwxyxgUfLIfaxz78trIPqK0kiZZkFOkJ\
+BXwLu3B6zPb2Yat0uaFtw14NdVwex7If+oeN6/\
+2VWLYjRXr5IE2GA09lpEmFeV02G2Cfjn539N2VfVwQku7I6LBUL+EiX3nj2O9Bw5JhAfLS/\
+RQ6DMaON1Uso2yc/uM/0D//9iXWHso4iFR6fxizf9HN6bo3Q+g126xFRohn6ctmovMPZ/gDELC/\
+v0MsI1NROttSvoKVBm7tPbNm/MIDFROXitWzWEki3m7pPIjS12qsO9PWWqYWk2DszdB/l3rDeNd7O/\
+8RTonYBVOteBnYo5eSQHmVltS75ndvZgXOIyP5EeXjdhoGhNu6ynpJfv+\
+F1diPhoGy7mRCBS6uxj3IgJ1rS+lcrPgeZqGM2IkpKI6zPuA+\
+StJA507iFMiCIQOGSr3TXjaOCBeI21p+kr5cvd5Zl/\
+t0iwdTjbvW373xW8ChBeNDW8muinX4xhtvvlH3foXvG8MMfvDQMXKTM1g2+yeIvcSfC9HpJXjJ8+\
+sq7ap18JlMx9H5y/UwDvvDfr61ZSIIXMrpdUghav6iTo6ONdp7q/kH6C7oiZurdW+\
+KCb7cHWT1W0n95o2bt+o3vqjf+\
+AwhYx0BLewngcwZOvUK3HHRgZlsZOtdgK4qRBTo5VoY7wJjcz3cKQWCSLE721rzrveybKAX5ubkIGz\
+AmcQybPhJf25vfs6HcOf8fDf8xmUC4pzFYrKvJhk4vZGG3TD2zjyOd+\
+NkFIOlNuDdl3sJYVfoxXlSVhe5M0RL/Gq1ZGYzkmFMqgVFI5sjH3nYlN+x+g/\
+ZFtZ8hmIjZN5K6LwTW9WGuh36SKzaObSHwknpBEL2WQeVwrcXJRlJt0KbEI764WSwvmTcHq0axdMfH\
+7rz4BaYnvmUu9+/OuaM2wCimUcFDDa+2UPHjth1hOf5yKQ11kUlqSUefi/k3As6/\
+OHRWyisIUyzJpKUJzeVvPT7B5eMuw8mmHfZbFqFIaeDVJEOTBujzWFvStBHK3mcPWNzsuKuc+\
+aLOen9y6k8cMYnRs6GqHxHMZPSRez+\
+PmmLcCJy2rgpkk45uDbEohJI26RPRiZSEwsoAtOR1GZRIiwSjhwm/jUga0IP/\
+Z6QWsAKUj48Umq3hi9aZSIe9tsqxfagjEYwTBlcQ7QoVwEVdAPvIOgxQQGqpRMEgCwLYUiMwqzHa0P\
+kJGIImqPyVlDOQIA5neqEJomgHdpmXgwC28VemEScF2LrWAx6Y42UMxI+7BD8DpF/\
+NCqPFHIhwZmOgUMXsJgalTp5KfqxBU8FSKozpS+4nzfa36MCyDPnv0jzz12anV/\
+oKU6EkTH322FcSmgqxiS/SsA+t+vyKsJmSsvFthbiuNmab7uIeCbLSTui+\
+wdbClT5CtWGj6gBN5dCbOQaXAb4rvN0XNq5lNN6vXO0OETu+\
+PLQmm9tjQfwd0Zb4ZM8FQcTmULZm13AheRwl3Fpu8iEz3u9ZMRpQ/iHA/\
+7vV94ARVkZYJ5v5NWklyUDk7PkIfStlUfLrY2NtaXm2po3XZlT+8r3puaAG3JQ8FEhJY+\
+7JgLkaQEppoxsvg4KUXq0VWBjlkX1cksi58m4vDJ2OFkXkI0Si5DUpB3+578Qjy+\
+0kKsvFepSPvIeo744DACWkxwQrFIKqOd5BSwxeeC0TYsgFxvzVvYlZSDOt48p8HCkXiNE7aY845+\
+49V23vKWydOx4mhOJxQngE2crpUR5knh83xiYbAP54Tkbe5vRoCebp7h448bEJg7m4jt7P4mCiS8Xk\
+Wziw+IYcTohw/\
+3t4kXS7QNFeZ4lU2bzDvdGVLACQaNi3ZRZ70AGazdsKRmY1VNNivyX7XdOCw4fu9gcIK8LHm+\
+tWkY4JD8oyvNJ4S7dRbZ3BHfe3oTGHdj6EZiJQv6+QnWvUqq687Q9zmxW/\
+p8NMA6bPCVT3jXlkG7CSWV2s56x5QhV/2cdiya/AvQqbJhzd4uhN/0gSbpcd+CK1T7O/\
+Nz3lG15Mle6XF5idZ50HrScd780lRGX17/1qUsBH2ecOfPwQxTnpnNxyG/\
+lHmeDo0D50PHObsIscgTI75HLPUdf89zNbp1uJYPQL7pbF0i9KIAg20upzTCFDZtk5B/gXn/\
+X89MkirDhCSLdJnnwHNQUdVa82fk7n83f+fy2qt+4IT+t35IdVb8jb3xe92/d/NSfV8GN+\
+fYtZH62U5V3Yr4NdQjEXHMtr51PqDFOYF+p/kDKLEdcz50cJ04zezpn7b3vLCf+\
+kPsWBH0NCflw4L038dEp4AEhlS3lsLZOmMik5znecYC5yzKTJP6zeXVjQwip19Skfp6xNuD90zd/\
+ybj+vDOuyifC1FWRWKUjQ5tGVa4LFkjqshPcGEWiDfpkqgkzLfoy3Q1QohssmcPwa/\
+RTThyYm5DAhA9+40NxRo+\
+hxfuEjzlpxJpf1xArsUZuwIeV9uVACT9P0uj2WKmAZMsKIYJExEkGJHWvBLOEZEOgDBbKxOqaOzaCT\
+dP+wHQphRQRCynCUfw/\
+1NAD2tcf6syhEWZGgFK04ZB0JHVvQWxfB8fIJzGvJ2ghYWQQhaYTUeLvkmZQ0kmal6YI3EEOM+\
+ulSjFcePJdbbTGtNaYp5G1TDEitZMDpEA++\
+dOFys7OjlusEHD6QCiRqwITAFvtoy5m69MQBanMmmyp3/EdOSK4pG9QCeBnZSp02I31gpid3f/\
+9TfFrMf79zdlZwF3tHEekz51pfwy8LQxdEyNGw7AttowMyleAg7N37jTu3G4Q8PXNja1W81Hr4wmWW\
+iiFjByfxNWdawLSLcETV2evEQbU1quJ5tqT5nfeCQKEuhnNWBCrGWjRMLm+\
+cjgJwmAsMuQkjAe0Czko6Y2FuL1D12/PklnBF0Tjj0EF9cygWCmiYDSmzda7CudegW/\
+Jm4v22IqFBN1JKKGg34yhLIinkWyr6NnVgfQjlS0M0/DahE4vVGaui6ct0oZ8E2x+\
+jr9c48X84o096iqqUb6xOwwDNefW3bI5xbMg4TEa+\
+YGMBiEoAuZ41SxesyYg3FCC0D9EtB732wh0hXCMVFnxJNnIJFcQ63cbYiMGCwPru/KTZPGk6+\
+zGDl3EiZF4QJQBiGKf9rVSAz4CJSGmGTsaJJqDPzY8hip3bDEJDYM8uwBKNRCuhUuQAVnvgLqGFAMi\
+HFk2rgfhgvSuGyVtHNyT4A5AanNDmF3RvCtW1G6U6RgHm9FIjjW7RaM3IuZqi2yJeu5sqeRN2dIKiF\
+dVo9sQlIynS6h3UJ1oRbw3fp7AkRqBOOhmmAEZCIy9JnSQpoTUDM0OwaNzO1J4Yfx0V+zD1P/975/\
+tlIneaR5YpDvNAEr0wdI0Pl7Y5GP6JtV3SuKjtuTANYiSDC5CBrjF1ER5RGaVN6cj1UV5wTT05a7VF\
+yV1aIIafBcoRIoWGOeUR9eQggUNVZmTkhwWkvQyXawOlBakSTD0CTIih9lWY64QrJGh7Lnzsc+\
+Vy41wNIkKaQJJIy9UtmzTI5vQUk3dyD0nJ0XdhM3dUiQZEoQWRaWgA6VHCF1cub+xtULA8/\
+EcwWfFp7zxQPCmrKsnkRFJn9SNoz5ll1DGEJylYNxm/gQc/\
+Niu4i6E0KG0UQTI9WqCuvaoEGsC3xp0MjLejwWnJt0//Kf0e4aADMSQkZLXgAy/\
+8jYeldyZNB8okelL4P9QUXaYGi7LPRlGpJQWXZt1hSlZV+KHNAOzR/VChctrQSX/\
+wqTTeB5xulyxs0e7ZSJ3Fmt2SzElXUAmlMH4kea8xFMPKP9tVDxGZKHyQ2WmmqHIqS5UE+\
+50VGv4Ykw6C5WuLmDHTDUM7E/5bs19KtqNb0GBCZY2YkUhpZ+\
+kzojIOYCvHObKyKDihsEopGXMHWgcBAf+QG5k1lfY/1+\
+piStFTNiecx8B7fD32gEfvz1Heb6ucZAwv6zLOBwMI8bgShX4v6jMvCCqXc5dXXjqaK7MPKu8OEFY2\
+hYjJ4rLyzeVBcYjaJPcRjBIeLWXSE4D7YHKXAKkIT964CEMDq8tUpQb6fjVhdqEDDOKGkUeZwoWYEZ\
+yLTaTXxr1TFZ8hYwjHVtXATML4edP4LlB6jDXJ4rEA8w+sFbmcavHlVgScUGktQlpsErypl03k3E+\
+BbHZ1S62miHPasujPhUkKqZBcCnVmSi7uKAy1yWmn4hbDEtpI2pGZTL20DxOUZTJI6GjksZG8fKNBL\
+98KxBFFJ7ImyaoyHEBHYSOuPLFFdjTMAqIOArg5VvI09FOQ2mDKiYuS2jNh8eD3ogOCq0iGuX0uhrT\
+1ZdtleFLLObZ592+\
+UeOtrsx06OhjT8zjhKtRJwpXW4UWJOb42mBAAfIgzBsG5hevaw9MGiH66jZhbmZ1puWqI/\
+mnQ8hJZT7Y1Z8C7WjzKmicxPf4uw+b4ki1n3dMh+aAIT5RbXHfrZTNkD+\
+Sbdnsl1Q5pMYOZ8ja6JlENFh7bS82TKNX5w+\
+ZJy4p2G1K7dcDQLtM6sV9IpOY4ggcm7i6XeXeGRG5XeW6qsodLKqn9Hb12gmyIUrKSB3NeWbbcWGHB\
+MDXHRNyzFeTE2Jrx4nh9fOB1wwe9mI+xRrwE0IAUX8C3a9C8f8LMm2yLqmreZBOs/\
+Zj06yVCaXa76gATc8vTcdg4jBpLbUBhoN6ltQDikUmZZa2eDQ1BNxrmzp1VNARW8gBEwepdzyu2ZYd\
+HHtXUamJX2uiZ15RwaOnGfUhM3qc1h8bD08p4c8tBJI1J/CFmaNcGrxG/upSBPBI95KRoOP19rhO/\
+0dBE3HP/I8Q7eE67Gg5F4ngSrGxLHT7WR0+\
+wHVhuZlJkpN5qi3Ma1KTsPBykChT5Es3i0EpN8YBZdvRpA6Nol+\
+wS2mKa4hTM8mhwj0Nzia4BCw3APPy9UD7jaJ6ihLYIdxnzitqdjWo5JSlBq2DwV3gvTAw3VxZ9GYpo\
+rjSVx55WV48QxO41w0Ftx1saI3hSVEha/u8VpBXT22z3vl+V+\
+vnJYUlnevXlK4pitgooeZ2B5Uo3O0mNaIPG6wpPNlcd/7nb/72qVWlZzu1UsID80y6yZCB+\
+lka1X9jz4HW2D2UbkCVjgROnDNd8LbqUIWm8hEnN7ypwZikCMpRuEv5p58m1H2VseaRAVEHo6Ck0jY\
+mDasB9hhqgGXSzjj0c6FuAO98M6TqJRuDtJ3l/L0L/bbivlPtXnldb0H69+\
+qmfrThlPT5BDPnm6yVf/KJuE/Ft83LNex+ohFKTYI2fHHH9Mfsc+\
+p8u9HVQPXN6ANmRH6nPHswPQU24gkIE+MYcKter1cqd38M+8851/vxHn2vbEYwWhQtV/\
+evmWSrfpuIvM0bVRz8eG/ykHQzw4p7X3Gi9yLRGL5X6aan1Grbf1YTP+\
+zXcFNN3H5RE819pdeoJSbq98QP29X97WoN2ZFBarv6ogo2rjxabm49eLy+\
+8qjlVUqPOyrUfzoOVzONq6AKfBo/+434+CmnNM+uwl+g3qSSa2Fuzhps/YcweHHt5VRTY+\
+eKtiMxsA7OYnZ2G7j+sP9idnaChQuVj58S0SddeAj/\
+o6X0EDLvSJSmI0QCGNSj75bMVYsJYmr85Z9eWg9Usmz/dOQp+ZvtqrmqJtab21VI0Hx8pEYw/\
+HRXLMEw8f3ZHyssZ/xP5z+\
+71bg1XxPVdfKL1WcvJ3GVutHmmOjToTKLSCITyDZOxIa5jgCzCj9nYxRcxYDM7NOemP+\
+8X2M77CCLESO4+VXT9fwZBGH4bMliXoDNYnvOCsBgg09/\
+MsbfvtG48XnBeDEnqg8RJ19JBBQDRirvARtQVhg0CUB4SF+B8U/I5/\
+FcasTxZBVekv7ah7oiqyJSnUykYbeXIaiNfjaWG84aHcI9r8tiNmTkeNz5tl3w0lSoHAEynnIzvai7\
+81a4S0yoJZxTcJebSNQ0vcco3x2457/8Uczfq2ITUUU/\
+H7HhZmnDzXsnUVQpTXKwPwxMj5sysIHyw87YeMH8+\
+TFPsFybi6huuOmBoTVfvKLL3fLXAnifxvX2M9PAm+7eQwiV/i61QPOwZ5ddqjugFpg/\
+pEkqwWuITZMlmmk6vTIo7pW6uNeGdp0Tw1ONJC6hxRJk+\
+eWbrJxHCWWdFOCVROLk8qp8qMBEmYzAPh3h9wjKvGLLn3sonXH7Lb/\
+PTGPM5tT8jQ3l8AZE3zxlcbPr4t2ISdS/s7kD/\
+RVgkaLZ7JkeGeCI7uUDnskcuVw4GMS1nXOgpq23pbZ4apeWmkyF3lgUMyMz5rRPKLgWKMyiIHL58db\
+qowfm/qXHW1vQz9JgxpYb3Dw1OVLOEKLJTp2IUfnoyvGF+\
+0xWFBCm409xs6XRvtopC6YjQ9qTcfE66JlSCHzgUoSrJdQ/\
+mlGh6R0jYnQ79K0HoLX1x15LUNXSH2RuI9NgG9KF0Gs0pI/duw5Kk3fNoB/\
+I8MsQhLOGmwzyaUJRmzKHtFqlaVIinTq4Kc3u+QCKtCF3j5HGcwtu1BsTeIKhAhQKK9+ubJV5nA/\
+zYrrcDdvMCLJsYFQFurc8tslPYMNUWwUM4E14zm2mbhnrkVUcqxj27Qv9uYwZGmDTmDWXpGpRCJKGm\
+QvayiNL+U2C3EtCGs3ytNmMGChJhg6yDzxU+pkHKab8g7zkru0sU6Fr+hxmXudm6Ief3VBbQJnY5/\
+rOz2UQqLQkdhPM3D2ZjHYt8Cp2EpbmnK423DiVjcOS4ZhviTAgLdlunlv6s0Q7fM/\
+GE3Wt0xKCQHpbPElhFS5sgNWIe0HkW7hrrzQ/\
+O7OegoUOBYMANaWFuV4bW56jzuf4CDOLyfryexDbzM5jQtzdGDlb4ZnvnRCteKLDhtELbco2SNVeaO\
+phR5etk6JIDkh1tXnMaa3PtTxIyegPvqxgx/\
+kDLGo9DNKQSDfWi4LdiopdQz521rUCmsGJ59b4XxqYSE96zeMhdpM5gtq5bT7vjNX23BoVfjFyYgQq\
+Hi5O0d/Wlp4tPnmoEIahW1YRudo+9HCQ1KQ/Lk1WuOffEEuSjYb/mJYeEdk4K7Mvixtn8helpWv/\
+49QG1bbIINXHAvkQAyBIBx9B5m9CDtxdE6tXyN3xCGoicyq9gIQizTfE9eteeex2/\
+fqCaB43i3KzNiMEFZdezhU4gT1t1Q3jRuUmQV+\
+2YxEC3CpPsiZfRRZzrYPjrEblU4LTLM2yHKyT51smuhktPIJxLtxaf9BWx0+/\
+YPYbNDRcNTpp3x7ljAQkxQbAr4HAchZ0/vyzuLZR986V/1j1pHfA/we0i6e1"|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"14ad28fa-b798-49aa-8744-2b310cd1a97a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The asset number is 3. I plan to take it in outage at week 3 of this year. \
+The duration is 2 weeks.\
+\>", "ChatInput",
+ CellDingbat->Cell[
+   BoxData[
+    DynamicBox[
+     ToBoxes[
+      If[
+       TrueQ[CloudSystem`$CloudNotebooks], 
+       RawBoxes[
+        TemplateBox[{}, "ChatIconUser"]], 
+       RawBoxes[
+        TemplateBox[{}, "ChatInputCellDingbat"]]], StandardForm]]], 
+   Background -> None, CellFrame -> 0, CellMargins -> 0],
+ CellChangeTimes->{{3.955532971206667*^9, 3.955532976772129*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"cec48f7e-de3e-8e4d-88a7-255523c3ae5a"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicModuleBox[{Typeset`var$$ = False}, 
+   StyleBox[
+    PaneSelectorBox[{False->
+     PaneSelectorBox[{False->
+      FrameBox[
+       TagBox[
+        TagBox[
+         TagBox[GridBox[{
+            {
+             PaneBox[
+              DynamicBox[ToBoxes[
+                (If[
+                 TrueQ[$CloudEvaluation], #, 
+                 
+                 Pane[#, ImageSize -> {16, 16}, ImageSizeAction -> 
+                  "ShrinkToFit"]]& )[
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ChatbookExpressions", "WrenchIcon"]]]], StandardForm],
+               ImageSizeCache->{16., {4.900390625, 11.099609375}},
+               SingleEvaluation->True,
+               TrackedSymbols:>{}],
+              BaselinePosition->Scaled[0.2],
+              ContentPadding->False,
+              FrameMargins->{{0, 0}, {0, 0}}], 
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ChatbookStrings", "FormattingToolUsed"], StandardForm],
+               
+               ImageSizeCache->{
+                30.095001876354218`, {0.15600000572204564`, 
+                 9.256000339508056}}],
+              StripOnInput->False,
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             StyleBox["\<\"Outageplanner\"\>",
+              StripOnInput->False,
+              FontWeight->"DemiBold",
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             PaneSelectorBox[{True->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialCloserIcon"], False->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialOpenerIcon"]}, Dynamic[Typeset`var$$],
+              BaselinePosition->Baseline,
+              ImageSize->Automatic]}
+           },
+           AutoDelete->False,
+           BaseStyle->{ShowStringCharacters -> False},
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {{0.25}}}],
+          "Grid"],
+         EventHandlerTag[{"MouseDown" :> FEPrivate`Set[Typeset`var$$, 
+             Not[Typeset`var$$]], Method -> "Preemptive", PassEventsDown -> 
+           Automatic, PassEventsUp -> True}]],
+        MouseAppearanceTag["Arrow"]],
+       Background->RGBColor[0.8980392, 0.9686274, 1.],
+       BaseStyle->{
+        "Text", "IconizedDefaultName", FontSize -> 13, LineBreakWithin -> 
+         False},
+       FrameMargins->{{4, 2}, {2, 2}},
+       FrameStyle->RGBColor[0.6117647, 0.7960784, 0.890196],
+       ImageMargins->{{0, 0}, {8, 8}},
+       RoundingRadius->5,
+       StripOnInput->False], True->
+      FrameBox[
+       TagBox[
+        TagBox[
+         TagBox[GridBox[{
+            {
+             PaneBox[
+              DynamicBox[ToBoxes[
+                (If[
+                 TrueQ[$CloudEvaluation], #, 
+                 
+                 Pane[#, ImageSize -> {16, 16}, ImageSizeAction -> 
+                  "ShrinkToFit"]]& )[
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ChatbookExpressions", "WrenchIcon"]]]], StandardForm],
+               ImageSizeCache->{16., {4.900390625, 11.099609375}},
+               SingleEvaluation->True,
+               TrackedSymbols:>{}],
+              BaselinePosition->Scaled[0.2],
+              ContentPadding->False,
+              FrameMargins->{{0, 0}, {0, 0}}], 
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ChatbookStrings", "FormattingToolUsed"], StandardForm],
+               
+               ImageSizeCache->{
+                30.095001876354218`, {0.15600000572204564`, 
+                 9.256000339508056}}],
+              StripOnInput->False,
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             StyleBox["\<\"Outageplanner\"\>",
+              StripOnInput->False,
+              FontWeight->"DemiBold",
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             PaneSelectorBox[{True->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialCloserIcon"], False->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialOpenerIcon"]}, Dynamic[Typeset`var$$],
+              BaselinePosition->Baseline,
+              ImageSize->Automatic]}
+           },
+           AutoDelete->False,
+           BaseStyle->{ShowStringCharacters -> False},
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {{0.25}}}],
+          "Grid"],
+         EventHandlerTag[{"MouseDown" :> FEPrivate`Set[Typeset`var$$, 
+             Not[Typeset`var$$]], Method -> "Preemptive", PassEventsDown -> 
+           Automatic, PassEventsUp -> True}]],
+        MouseAppearanceTag["Arrow"]],
+       Background->RGBColor[1., 1., 1.],
+       BaseStyle->{
+        "Text", "IconizedDefaultName", FontSize -> 13, LineBreakWithin -> 
+         False},
+       FrameMargins->{{4, 2}, {2, 2}},
+       FrameStyle->RGBColor[0.8392156, 0.9294117, 0.9764705],
+       ImageMargins->{{0, 0}, {8, 8}},
+       RoundingRadius->5,
+       StripOnInput->False]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic], True->
+     FrameBox[
+      TagBox[GridBox[{
+         {
+          TagBox[
+           TagBox[
+            TagBox[GridBox[{
+               {
+                PaneBox[
+                 DynamicBox[ToBoxes[
+                   (If[
+                    TrueQ[$CloudEvaluation], #, 
+                    
+                    Pane[#, ImageSize -> {16, 16}, ImageSizeAction -> 
+                    "ShrinkToFit"]]& )[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ChatbookExpressions", "WrenchIcon"]]]], StandardForm],
+                  SingleEvaluation->True,
+                  TrackedSymbols:>{}],
+                 BaselinePosition->Scaled[0.2],
+                 ContentPadding->False,
+                 FrameMargins->{{0, 0}, {0, 0}}], 
+                StyleBox[
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ChatbookStrings", "FormattingToolUsed"], StandardForm]],
+                 StripOnInput->False,
+                 FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+                StyleBox["\<\"Outageplanner\"\>",
+                 StripOnInput->False,
+                 FontWeight->"DemiBold",
+                 FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+                PaneSelectorBox[{True->
+                 TemplateBox[{
+                   RGBColor[0.2, 0.5137254, 0.6745098]},
+                  "DiscardedMaterialCloserIcon"], False->
+                 TemplateBox[{
+                   RGBColor[0.2, 0.5137254, 0.6745098]},
+                  "DiscardedMaterialOpenerIcon"]}, Dynamic[Typeset`var$$],
+                 BaselinePosition->Baseline,
+                 ImageSize->Automatic]}
+              },
+              AutoDelete->False,
+              BaseStyle->{ShowStringCharacters -> False},
+              BaselinePosition->{1, 1},
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             "Grid"],
+            EventHandlerTag[{"MouseDown" :> FEPrivate`Set[Typeset`var$$, 
+                Not[Typeset`var$$]], Method -> "Preemptive", PassEventsDown -> 
+              Automatic, PassEventsUp -> True}]],
+           MouseAppearanceTag["Arrow"]]},
+         {
+          TabViewBox[{{1,"\<\"Raw\"\>"->
+           FrameBox[
+            FrameBox[Cell[BoxData[
+              
+              PaneBox["\<\"TOOLCALL: \
+Outageplanner\\n{\\n\\t\\\"startweek\\\":\\\"3\\\",\\n\\t\\\"duration\\\":\\\"\
+2\\\",\\n\\t\\\"generatorassetnumber\\\":\\\"3\\\"\\n}\\nENDARGUMENTS\\\
+nENDTOOLCALL\\nRESULT\\nplanoutage[We know you wanted to disconnect your \
+generator for 2 weeks starting at week 3, so at day21. This is unfortunately \
+not possible.You could disconnect earlier. If you want to connect earlier, \
+you could disconnect your generator for the duration of 2 weeks starting at \
+any day between day 1 and day 13.You could disconnect later. If you want to \
+connect later, you could disconnect your generator for the duration of 2 \
+weeks starting at any day between day 55 and day 117.]\\nENDRESULT(bahi8)\"\>",
+               AppearanceElements->None,
+               ImageSize->{
+                 Scaled[1], 
+                 UpTo[400]},
+               Scrollbars->Automatic]], "Text", "RawToolCall",
+              FontSize->11,
+              Background->None,ExpressionUUID->
+              "fab6310a-5800-c341-85f2-d159490c194f"],
+             Background->GrayLevel[1],
+             BaseStyle->"Text",
+             FrameMargins->5,
+             FrameStyle->None,
+             ImageSize->{
+               Scaled[1], Automatic},
+             StripOnInput->False],
+            Background->GrayLevel[1],
+            FrameMargins->10,
+            FrameStyle->None,
+            StripOnInput->False]}, {2,"\<\"Interpreted\"\>"->
+           FrameBox[
+            TagBox[GridBox[{
+               {
+                ItemBox[
+                 PaneBox[
+                  StyleBox["\<\"INPUT\"\>",
+                   StripOnInput->False,
+                   FontSize->11],
+                  FrameMargins->{{5, 5}, {1, 1}}],
+                 Background->GrayLevel[0.95],
+                 ItemSize->Fit,
+                 StripOnInput->False]},
+               {
+                FrameBox[
+                 TagBox[GridBox[{
+                    {"\<\"startweek\"\>", 
+                    InterpretationBox[
+                    
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox["3",
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[3]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    3,
+                    SelectWithContents->True]},
+                    {"\<\"duration\"\>", 
+                    InterpretationBox[
+                    
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox["2",
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[2]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    2,
+                    SelectWithContents->True]},
+                    {"\<\"generatorassetnumber\"\>", 
+                    InterpretationBox[
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox["3",
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[3]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    3,
+                    SelectWithContents->True]}
+                   },
+                   AutoDelete->False,
+                   BaseStyle->"Text",
+                   FrameStyle->GrayLevel[0.9],
+                   GridBoxAlignment->{"Columns" -> {{Left}}},
+                   
+                   GridBoxDividers->{
+                    "Columns" -> {{True}}, "Rows" -> {{True}}},
+                   
+                   GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                   GridBoxSpacings->{"Columns" -> {{1}}}],
+                  "Grid"],
+                 Background->GrayLevel[1],
+                 FrameMargins->5,
+                 FrameStyle->None,
+                 ImageSize->{
+                   Scaled[1], Automatic},
+                 StripOnInput->False]},
+               {
+                ItemBox[
+                 PaneBox[
+                  StyleBox["\<\"OUTPUT\"\>",
+                   StripOnInput->False,
+                   FontSize->11],
+                  FrameMargins->{{5, 5}, {1, 1}}],
+                 Background->GrayLevel[0.95],
+                 ItemSize->Fit,
+                 StripOnInput->False]},
+               {
+                FrameBox[
+                 InterpretationBox[Cell[BoxData[
+                   PaneBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox[
+                    RowBox[{
+                    "LLMToolRepositoryTemporary`planoutage", 
+                    "[", "\<\"We know you wanted to disconnect your generator \
+for 2 weeks starting at week 3, so at day21. This is unfortunately not \
+possible.You could disconnect earlier. If you want to connect earlier, you \
+could disconnect your generator for the duration of 2 weeks starting at any \
+day between day 1 and day 13.You could disconnect later. If you want to \
+connect later, you could disconnect your generator for the duration of 2 \
+weeks starting at any day between day 55 and day 117.\"\>", "]"}],
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox[
+                    RowBox[{
+                    "LLMToolRepositoryTemporary`planoutage", 
+                    "[", "\<\"We know you wanted to disconnect your generator \
+for 2 weeks starting at week 3, so at day21. This is unfortunately not \
+possible.You could disconnect earlier. If you want to connect earlier, you \
+could disconnect your generator for the duration of 2 weeks starting at any \
+day between day 1 and day 13.You could disconnect later. If you want to \
+connect later, you could disconnect your generator for the duration of 2 \
+weeks starting at any day between day 55 and day 117.\"\>", "]"}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[
+                    LLMToolRepositoryTemporary`planoutage[
+                    "We know you wanted to disconnect your generator for 2 \
+weeks starting at week 3, so at day21. This is unfortunately not possible.You \
+could disconnect earlier. If you want to connect earlier, you could \
+disconnect your generator for the duration of 2 weeks starting at any day \
+between day 1 and day 13.You could disconnect later. If you want to connect \
+later, you could disconnect your generator for the duration of 2 weeks \
+starting at any day between day 55 and day 117."]]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    LLMToolRepositoryTemporary`planoutage[
+                    "We know you wanted to disconnect your generator for 2 \
+weeks starting at week 3, so at day21. This is unfortunately not possible.You \
+could disconnect earlier. If you want to connect earlier, you could \
+disconnect your generator for the duration of 2 weeks starting at any day \
+between day 1 and day 13.You could disconnect later. If you want to connect \
+later, you could disconnect your generator for the duration of 2 weeks \
+starting at any day between day 55 and day 117."],
+                    SelectWithContents->True],
+                    AppearanceElements->None,
+                    ImageSize->{
+                    Scaled[1], 
+                    UpTo[400]},
+                    Scrollbars->Automatic]], "Text",
+                   Background->None,
+                   FrameBoxOptions->{BaselinePosition->Automatic},
+                   PaneBoxOptions->{BaselinePosition->Automatic},
+                   ExpressionUUID->"edf34322-e74c-ef45-8701-f3a55b801473"],
+                  TextCell[
+                   Pane[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`ClickToCopy[
+                    LLMToolRepositoryTemporary`planoutage[
+                    "We know you wanted to disconnect your generator for 2 \
+weeks starting at week 3, so at day21. This is unfortunately not possible.You \
+could disconnect earlier. If you want to connect earlier, you could \
+disconnect your generator for the duration of 2 weeks starting at any day \
+between day 1 and day 13.You could disconnect later. If you want to connect \
+later, you could disconnect your generator for the duration of 2 weeks \
+starting at any day between day 55 and day 117."]], ImageSize -> {
+                    Scaled[1], 
+                    UpTo[400]}, Scrollbars -> Automatic, AppearanceElements -> 
+                    None], "Text", Background -> None, 
+                   FrameBoxOptions -> {BaselinePosition -> Automatic}, 
+                   PaneBoxOptions -> {BaselinePosition -> Automatic}]],
+                 Background->GrayLevel[1],
+                 FrameMargins->5,
+                 FrameStyle->None,
+                 ImageSize->{
+                   Scaled[1], Automatic},
+                 StripOnInput->False]}
+              },
+              DefaultBaseStyle->"Column",
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+             "Column"],
+            Background->GrayLevel[1],
+            BaseStyle->{Editable -> False},
+            FrameMargins->10,
+            FrameStyle->None,
+            StripOnInput->False]}}, 2,
+           ImageSize->Automatic,
+           LabelStyle->{FontSize -> 12}]}
+        },
+        AutoDelete->False,
+        BaseStyle->{ShowStringCharacters -> False},
+        BaselinePosition->{1, 1},
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{0.25}}}],
+       "Grid"],
+      Background->RGBColor[1., 1., 1.],
+      BaseStyle->{
+       "Text", "IconizedDefaultName", FontSize -> 13, LineBreakWithin -> 
+        False},
+      FrameMargins->{{4, 2}, {2, 2}},
+      FrameStyle->RGBColor[0.8392156, 0.9294117, 0.9764705],
+      ImageMargins->{{0, 0}, {8, 8}},
+      RoundingRadius->5,
+      StripOnInput->False]}, Dynamic[
+      TrueQ[Typeset`var$$]],
+     BaselinePosition->Baseline,
+     DefaultBaseStyle->"OpenerView",
+     ImageMargins->0,
+     ImageSize->Automatic],
+    Deployed->False,
+    StripOnInput->False],
+   DynamicModuleValues:>{}]], "InlineToolCall",
+  TaggingRules-><|
+   "ID" -> "bahi8", "Name" -> "Outageplanner", "DisplayName" -> 
+    "Outageplanner", "FormattingFunction" -> Automatic, "ToolCall" -> 
+    "TOOLCALL: Outageplanner\n{\n\t\"startweek\":\"3\",\n\t\
+\"duration\":\"2\",\n\t\"generatorassetnumber\":\"3\"\n}\nENDARGUMENTS\n\
+ENDTOOLCALL\nRESULT\nplanoutage[We know you wanted to disconnect your \
+generator for 2 weeks starting at week 3, so at day21. This is unfortunately \
+not possible.You could disconnect earlier. If you want to connect earlier, \
+you could disconnect your generator for the duration of 2 weeks starting at \
+any day between day 1 and day 13.You could disconnect later. If you want to \
+connect later, you could disconnect your generator for the duration of 2 \
+weeks starting at any day between day 55 and day 117.]\nENDRESULT(bahi8)", 
+    "Parameters" -> <|
+     "startweek" -> 3, "duration" -> 2, "generatorassetnumber" -> 3|>, "Open" -> 
+    False|>,
+  Background->None,ExpressionUUID->"4a5241f1-f584-0a4b-ad09-df6ba3ab1c1a"],
+ "\nIt seems that starting the outage for your generator asset number 3 in \
+week 3 is not possible. However, there are some alternatives you can \
+consider:\n\n1. ",
+ StyleBox["Start earlier",
+  FontWeight->Bold],
+ ": You could begin the outage for a duration of 2 weeks starting between day \
+1 and day 13.\n2. ",
+ StyleBox["Start later",
+  FontWeight->Bold],
+ ": You could also choose to start the outage for a duration of 2 weeks \
+between day 55 and day 117.\n\nLet me know if any of these options work for \
+you, or if you would like to explore other possibilities."
+}], "ChatOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     GraphicsBox[
+      TagBox[
+       RasterBox[CompressedData["
+1:eJzt3clzG1d+B3BXkkOO/BOY23iRRKIb+9YAuAAgSIKbuJMgCa7iJlIitVmC
+JVmW7LGG8TZOxuXilGsySWVSo9SkkisP8weoaq45qPIX6JBTLr+8B4AyROE1
+GkA3XgP4Hj5TY1siwe7fl2/p1+/93fLe6Npfvffee4d/y/5ndOk4cnCwdHus
+g/3DxO7h5vruajaxe2N1ffXAs/zX7F/+X9HfMEQEAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZT
+FKWDyTGvGYKmdMp0yq4lsC9WH2c2qFOo35nsWgL7UtCOtwzZtQT2pBT67NLr
+E0yjya4psCcF7XnLkF1LYF+sPl7Irk8wxZnsWgL7YvWxX65uVMVPfscBBZRD
+Cio3KKRyNynsPCLNeczcoojrNkVddyjqvksx9z3q8XxMvZ771Ot9QH3eHPX7
+uE8o7n/IPKKE/zElA9ynNBB8kpcKfUaDXPgpDTHDnPaM0sxI5PO80egXNMbF
+fknjzETPl3lXe5/TJNf3K5pipvtP8mbif0+zXOIrmmPmk1+XtTDAfUMLqW9o
+cfBbygx9S0vD39HyyK8pO/o9rU78A61P/oa2Zn6g7fkfaW/plA5Xf6Kjrd/R
+nb1/pgc3/0CP7/6Rnj38E/3q2X/R86f/Sb988h/0+eM/0dOH/05Pcn+kx/f/
+jR7e+1fK3fkXun/r93T36Hd0+8ZPdHzwW7q5z77e7o90ffsH2tv6R9pZ/56u
+rX5Hmyvf0PrSV5RdPKHl+eeUmf2SFqa/oLnJZ+TzRkU5z8muJbAvVh9dojbC
+59hCzm2U8+mJx3rtuSa7lsDeFMEY3eOYQc5tlPPh1K4w57JrCOxPKayzeKd2
+XEoSObdRzntjU6Kcv5BdQ2B/rE4y5evHjZzbKOced1CU833ZNQT2x+qkUzhG
+V9aRcxvkfHo8pzc275JdQ9AcWK28KjtGVyaRcxvkfGhgS5Tx17JrB5qHeIze
+j5zbIOexyDjG5lA3Vi9pUb8QOZefc5fTI8p5RnbtQPNQdNa6+5Qsci4x51Nj
+9/TG5p2yaweaC6uZl+XH6GPIucScpxKrooy/kl0z0HxY3ZyUqyenEkPOJeY8
+Eh4W5fxUds1A8+FrJ4VjdHUfOZeUc52xeVp2zUBzEuXcr2aQcwk5vzp6rDc2
+75BdL9CcFME+Uh5lGDmXkPNkPCPK+EvZtQLNSynsCVlmjB5GziXkPBxMiHJ+
+IrtWoHnpj9GvI+cNzrlOnx1jc6iLInhPlY/RkfPG5Xxq/DbG5mAZRbCXlIc1
+Ich543I+kFjC2Bwsowj2kuJjdOS8cTkPh5KinOdk1wg0P0VnL6mQ8wA5b1DO
+dfrsmuwagdYgHqMvIecNyPnMxB1hzmXXBrQO4RhdTSPnDcj5YHJZlPMz2bUB
+rUPvOTpybn3ONfHYHM/NwTR6z9GRc+tzjufm0Cji9TJryLmFOV+ceYjn5tAw
+imCtu1edQM4tzPnI0Caem0PDiMboLqUHObcw5/29k6Kcn8quCWg9imDPOFVx
+I+cW5tznDYtynpFdE9B6FJ0940LOPeTcgpyvL+u+u4J92sESimBfd7+6gJxb
+kPP5qY9FGcc+7WAZ0XoZrzqCnFuQ8+FUFutjoOH05uKQc/Nz3hMdFeU8J7sW
+oHXprZdBzs3Puc4cHNbHgGX05uLCrn3k3MScb2Z131HrlF0L0NpEc3FB5wpy
+bmLOF2YeCHMuuwag9YnWxfnUq8i5iTkfT29jDg6kEc3FudUEcm5izlPJRVHO
+8Y4aWI6vwyo7565qyLmJOY9oKVHO92XXALQ+vTl35Ny8nLtcXlHONdk1AO1B
+lHPNdR05NynnmGsH2RTBfnEh5wZybkLOM3M5zLWDdKI5d79zFjm3Nud45xwa
+htXbqfDZGnJed85HhtbwTA2kEz1b86qDyLm1OcczNWgYRXBGi1vtRc5NyHk0
+InymlpN976F9iJ6tIeeW5zwj+95D+9B9ho6c153zULAPz85BOv4MFzm3Luc6
+z8412fce2gtyLiXnnbLvO7QX8Zq4A+TcopzLvufQfkS1GHJtIufIObQI5Nya
+nC8tiM9Zkn3Pof3wNZjIOXIOrU0RrHFHzpFzaB3IOXIOrQ85R86h9SHnyDm0
+Psy3I+fQ+pBza3K+s/Etcg62IarFsGsHOcc6GWgRolrE+nZL17fjzHNoGF5v
+yDneV4PWpui8fx50ZZHzOufh3Ni7HWyA1Vtap80hpxIgn3OM5f0mcm4g57tb
+X9P4yCb5fZpeW87lZN97aB+KYB/IclxqhEKuBerxHiHnJTm/ufc9zU4fkhaO
+G7qOyDk0miLY17kSN8t82L3IMn+jLXN+5+aPtDh3RBEtUfW1KzqTfe+hfSiC
+tXDVcKlBCrhGKOa9RonAJy2Z8yef/IH2rn1BUxNbFAxE67peRTinARrGhHp9
+t613RinkmaJe/w4NhB41Zc4fHP2eDne/pqWFm5SIj5l+jTjZ9x7ag6KzBySf
+fzOrnj3OGAXdYxTzrVAieGjLnK9MfUbTo4c0mFikSLjmvvg7fPrzcZrsGoDW
+pwjm2lXFnT8Xma979apD+X82v80Pkd+dYNlfpN7AKqXCRzQSfWhpzucGP6ep
+5AMajbM8965TJDhIPk/FefHqfza3lwYSs7Qwczd/XqrPGxb92YzsGoDWx+rs
+pFz9udSed84/D7vWyOccZpn3WNKHfasvoXoowH4HBDxJCnnT1BdcKlqmfi60
+TMnwBo323KXByB7FQytvC6+Q5hthf3cgz+UUPsM2Mds+GhyYp+WF+++ci9wb
+GxX9vVPZNQCtTxHMweXPULyQ89J1MhHPBvlc6fz8m9X5sTM+H5ceXKS15Ue6
+55+Pp7dFXwNzcWA5Yf06V3RzXrpOhj9XC7szLPfC84VaSrx/lLXZt1mWvzO0
+7pXnfGHmgd7X7JBdB2AfSmHOTLug5nchFJ11cJrrpuGcX1wn0+u7TmHPHHld
+8Xz/W3Yu65WMj1Nm/gYdXf+mpvXtPOc769/rfY+MyTXRKbtWoer7mGFeGKzJ
+s+KfzRUzrHu/FcHY3KloFHHdrjnnF9fJxIO3qMe3wbI/xdr8qtaLNVxPZJhG
+B9doeY6NsXe+N+U9lvOcR8IDou97aiDL6eJ9PS3e59cG64HXD/oLNlX8vfzK
+hNp9XbzfJxezL/r6XnXE1JyXWyczGH5AieANivoWKeKbzs+78/n3RmTZ6w5T
+2J+iZCxDQ33rtDD6iNZnv7LsfbXznI8OXxPeI0GmjebZSA2kZdc0vJPxjMW1
+fp79sv89qK5bnnO95+djMfZ3tGMaYlLaAfUGlt6abw/70hT0JAu8A2/w+fXS
++XZuKLZH4333aKL/Hi0Mnkh5L/U855m5R5XaXjMyrScju7bhTcY7G3C/hfhz
+cs15S2rO7bIezuycX1v9Tu85eqNgbwsbUGp8p8QsHjWFnFuY84H4vOycn8mu
+8XbH7kFHpfvkcHjI0R1iwox561LPBdRl5NzCnC/OiPd/rZWq+sipRlhfTGMM
+rWfolF3r7UzR2dflyqUBuvT+HF1+P0NX3l+iKx8sU9cHK9T9YZYcH66S4/I0
+KVcmSekaJLW7hxSHr/p6yffZj5FzC3O+ufINeb3V991dzgDr88cp6B+ncDBD
+4cAyRYL7FPbtUtCzTX7XFnnVDXI71kntWiZH15De18OcnNyc75dtw7v99NEv
+FujSLxbFOf9ojZRL7B5f2iDn5U1mi1xXrpGra4GcjjTTy3Ksn313vs+OnFud
+82T/nP59cAcpGBigqDZNid4tSsWPaKD/Dvv/t6g/dkS9kRsUCx/o5Jz/3l9h
+dRMRfY+c7FpvZ4pgX5fuK1rNOXdf2SZP1w6zS97uPVYH08L6Cjo3kfMG5Dwz
++0R4D2KRSbo68ojGhz+h0cEHlB74mIYSd2vLeVcSObchUXve3RU0LeeiNt2p
+hCnsPELOG5Dz9aWvKBwqn0HelpuX8x7k3IZE43M+92ZGzt2OjLAd8alzyHkD
+cz46tCO8F4m+VXNy7vCLvkdGdq23M0Vnz4dL70/XnXNVKb/XEZ9/C6rXkfMG
+5jy7eEJeT/n1f15v1ISci3+nK9jbQjpFsBa163K8rpy7uxeF992jjFFIvYmc
+Nzjnybg4i6n4Tn05F8+3v5Zd46CzTsbhqivnqkO8b2FQ3UbOJeR8ceYpuZzl
+3+fz+/rqyrniEO6r8UJ2jYP+M/Suy4macu7uXhBm3K0MsIzfQM4l5Hx5/jkl
++sVterJvu7acdwv3rsHY3EZEfXfepl/+YL7qnKsO4XNUCijbyLnEnM9PfSZs
+092uQA05z7K/6xLd71eyaxveyrnwfbXurkjVORd9LT7/xsfmQXUfOZfUb+ft
+uSjnXH9sraqcOxXhM3MuJ7u24Z2sC989776UNiXnpXl3KykKOneR8watkxlI
+LOnm+1wkPGU45251Uu9r8Xcgsd+EzSh6Zxuy/nvXR9NV5FzYj3u3r6jG8++y
+IOfm53x+6mPq79XN4jsG+vYM5dznWql0nzOyaxqEWRfvF+XwUteHGUM5dzqq
+35+Rn9Hgd86S5jpAzuvI+c7GtzQxulPTe+fh4LCh8XnAs0Gq/r67Z7JrGXRz
+3qHo7DnB30vt/mjJ0HM1V/dUxfdYRDxqkkKuJeS8ipxn5u/nz2mo5Xrzta/x
+nqzh52r8ndQK/fVO2bUMFbOueza5ozta9XssqiJcD6mLj+P5OQ2aewM5L5Pz
+zdWn+XMa+FksNf0+ZflO9q9Vtb7d7ap4PlRGdg2D4ayX3Zf1ja4+wzn3de+T
+33GdPI6Z/LsrtdRjIfOe/DkNEc9mW+d8c/XT/DkN/CyWWq+lxxOiwcQmzUx8
+RlNjnxrOucetO7fOncquXag66/pnF3drLOdZwzn3Ow4ooByST8mSS+mvuUbP
++Zwp0jwZ6vffbemcP7jzE21kH7J2e5rlrPZsc+FggkaHrtPC9Bc0N/msqpx7
+K2f8pYL59aajFMbqL3XvrSPIcr5aVc6Dyo38Opmgyv6MmjblvMT8WejuUYr5
+1ikZvNfUOb9/6yc62H1Os1PbFArG6r82Li/19Vxl2X6cXyeTmf2yqpz3RQ9Y
+X73i50DGm1gx6/p7urOsO68sVp3z0nUyfnUhf45ivTVdmnu/e5Ai3nmKBw9Z
+5h/bNuerc09pduImDacy+bPTzLoGoWAfXR29TmuZ52+th6sm532xPZbximMt
+Pu+GPV2bHL+HSsV9n12kdk3XnPPzdTKa6zrrj0+aeg76OX4mAz+bhZ/T0B/Y
+ooHwEcv8k4blfCr1gCZTd/LnNPRq4xTy1z92ucjv02gotUTrK18K170azXlf
+bIdUtWJfCxlvIcayrpDaPVxXzkvXyUTce+R3jpNTNT/z7+SDn4fMaL6J/BkN
+3EB4h4ajtykdu00jeXdolOu5W9ZQdO/NWQ19oQUK+QbyrP7sAX+ERoZWaHP1
+C0Pr243kPBo29HwOGW9BipHxOs+6I8Iyvll3zkvXyUQ9BxR0TZNb/7lt24ho
+CRofWaWdzZOq32PRy3l64A4FfBXn27hXyHjrMpp13o93dc+alvPSdTK9vluk
+eVbz8+1qC5yNaoTH48vPt2fmj+nW4Q91va8myjnfZ4K/r2bg82DOrQ0Us27o
+DBeno4/lfNvUnF9cJ9PnY1/Du8zG3oMtk3uPx0+J+Bgtzh3Sjf2vTX0v9WLO
+r47kKKpdNfrZXiDj7UUR7An9Ljd5HAuW5fziOpl44JhiTXIm8rneaJrG0xu0
+lsnR7cPfWPr+eWnO06mD/JpXg5/zRHbNgbSs871oDJ3B6FRi5FeuWZ7zcutk
+BkK3KR7co6hvgYKeofy8m4w8a4FB6gmP03B8g+bG7tP63POG7zPBcz49niMt
+pHt+SimccQzn/Xj9tXOlfVKb7TOR0o7yEqFt6g1k8nPtEd8EBTzJvOBFJeci
+lwqdn5McXqGElqVUdIsm4h/T1cR96e+fV7PPxAV8LN4pu8bAPhTD/fjC+yle
+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
+        "], {{0, 250.}, {250., 0}}, {0, 255}, ColorFunction -> RGBColor, 
+        ImageResolution -> {72, 72}], 
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+       Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+      ImageSizeRaw -> {250., 250.}, PlotRange -> {{0, 250.}, {0, 250.}}, 
+      ImageSize -> {40.50000000000003, Automatic}], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "TOOLCALL: Outageplanner\n{\n\t\"startweek\":\"3\",\n\t\"duration\":\"2\",\
+\n\t\"generatorassetnumber\":\"3\"\n}\nENDARGUMENTS\nENDTOOLCALL\nRESULT\n\
+planoutage[We know you wanted to disconnect your generator for 2 weeks \
+starting at week 3, so at day21. This is unfortunately not possible.You could \
+disconnect earlier. If you want to connect earlier, you could disconnect your \
+generator for the duration of 2 weeks starting at any day between day 1 and \
+day 13.You could disconnect later. If you want to connect later, you could \
+disconnect your generator for the duration of 2 weeks starting at any day \
+between day 55 and day 117.]\nENDRESULT(bahi8)\n\nIt seems that starting the \
+outage for your generator asset number 3 in week 3 is not possible. However, \
+there are some alternatives you can consider:\n\n1. **Start earlier**: You \
+could begin the outage for a duration of 2 weeks starting between day 1 and \
+day 13.\n2. **Start later**: You could also choose to start the outage for a \
+duration of 2 weeks between day 55 and day 117.\n\nLet me know if any of \
+these options work for you, or if you would like to explore other \
+possibilities.", "ChatData" -> 
+   "OEM6eJztXNtyHMd5lk3wgJVEipZky7pQWitU8eDdBcGDJaFk2ksAJCEBBIRZilYRtNA707s7xu\
+zMZnoWi7XER8hFUpWLJBfxA+QF8hLJZW5zlcpd8gj5/r+754AFQNK2qpwqu1QSMN39938+\
+NtzuNr1321GUTDwVKT8Lk3gliTN1mOmz92WkVdM73x6NHsmh8s6vqp4cR1nTq7W1DnUmY1/\
+l2y62x9lAxVnoS4LindvY2Pwi5M3jLLmfpEOZ6blOOlZ0Iz558kDhrgOVaj6hc1C1e1Kr7TQZjjI9T\
+1txNPSb3o/vTUdS6x2lR9iuVgbK3w/\
+jfnFuRWaqn6Sh0r0f6LkNoOhd2Ab8JJa66b2zMpCZpW47VaPZC35EO1bT8EDFj5JMdZNkPwd+\
+mdYeAmSSTjdU3M8Gv/3vM/bIejwa418B0Z6k3tz//vPf/UvTe3MFFwBwN4zCbNo+2/Q+\
+eJJEvVQON2TcH8u++\
+gq4gfId9dfjMFWBd3bpVuvmz5repa2RSnEy7ntTnalh74yl5vyTMA6SifbObUp/y/u1N/c4Dg/\
+B0LUDGY2ZjWvxQZgm8RCi6J13xzyl6SLvzSeqW2z1LtyTmT/4POl65zw/\
+DUeZdw4b2tvr3rw37u6rNFYRfvQHKhhHKmh6b6xEyTjwxqNRkubSvHBfyWycgumvmfsgKWJzGnbB2n\
+Q97rHwcWH7B8wVu6SCe1Pvrc8TgI/FRkuspGqo0qb3VlkrHj9eX9Vzj5IYF12yC8Qy4KPd95+\
+Y75lh1k4SqU7yWGOjk927K+\
+M0BUMg9Z7CD1Dbjux6FzyVHoT4pem9vqo0c4DY8uXXyVjIVAkpslTGehgy94Rm+\
+CJh4SSpGKhoBBmJaTJOhR+\
+FuEGLLBGjSMYCxhCmIhlnkDMueG811D724be1Q0DtJEm0IqNIVxTwdezC6Snb2/\
+ud0uWGti17NdRxdRrLYejPGtdP1mLZjRTp5YM0GY88lZEmFeZ12WyAfTr63dF31g5xQUi6I6NZqb6F\
+i3zlTWN/AA1LxgXIt+6n0GEwdrqtYhll0/Qf/4H+96+/xNpDGQeRSu+PY/\
+Yvun2u6c0Teu0ua5ER4gX6sp3o/MN5/gAE7O9vE8vIVJTOdpSvYKWBW3vXrBm/\
+8EDFxKVi9QJWkoi3WzqPovSFmureOWstc/eSYOrN079XBuN43/tR/\
+iOcErELplrzMrBHrySB8modqffN7978GpxHRvIjyqfdNAwIt02VDZL8/ovrsR+\
+NA2XdSUUFLq3HA8iAnWtH6Vys+B5moYzYiSkojrM+\
+4D5J0kDnTuIMyIIhA4ZKvbNeNo0IF4jbWn6Svli93t6Uh3SLB1ON+\
+9bfvfYrwKEF40M7yb6Kdfjaaz94ren9FN+3xhn84MwxcpPzWDb7K8S+\
+xZ8L0ekVeMk3N1XaV5vgM5mOo/PHm2EcDsfDfGvHRBC4lLObkELU/mGTHB1rtPd6+\
+3fQXdATt9eb3hwTfLk/ypq3k+\
+bNGzdvN2980rzxc4SMTQS0cJgEMmfo3Etwx0UHZrKRrXcRuqoQUaCXG2G8D4zN9XCnFAgixe5sZ8O7\
+PsiykV5eXJSjsAVnEsuw5SfDxYOlRR/CXfTz3fAblwmIcxb3kkNVZeC5rTTsh7F3/\
+nG8HyeTGCy1Ae++PEgIu0Iv3iRldZE7Q7TEr1ZL5rcjGcakWlA0sjnykbOm/\
+LbVf8i2sObzFBsh805C553Y6jbU7dFHYtXezB4KJ6UTCNkXHFQK316UZCTdGm1COBqG1WD9lnF7tGo\
+UT384c+fRLTA98yl3v391whm3AUQzjwoYbHwLM8eO2XWM5/nApDXWRSWpJR5+L+TcCzr8/\
+vFbKKwhTLMmkpSrm0pe+\
+idHl4y7DyrMu2w2rcOQ01GqSAfOGaPNYW9L0EcreZw9b3Oy4q43zBdz0vv9mTxwxqdGzpaofU0xk9J\
+F7P5t0hVhJXLauCmSXjm4tsQ9JZC2SZ+\
+MTKQmFlAEpiOpzaJEWCQcOUz8Y0A2hB77AyG1gBWkfHii1H4DX7TKRDwedlWK7UEZjWCcMriW6FCuA\
+iroBt5B0GOCAlRLJwgAWRbCkJiE2YDXxshJxBg0R+\
+WtoJyBAHM61QtNEkE7tM28GAS2i4MwiTgvxNapGA2mGilnJHzYIfgdIv9o1R4p5EKCMx0Dhy5gMbVq\
+TfJS9GMHngqQVG9OX3Q/b3V/iwogz5z/Is0/d2n2fqjnOBFGxjzshnEpoakZk/\
+w8AfvcrsvrCJspLRfbOojjZmu+7RLimSwn7Yju7+0oUOUrVBs+\
+ogbcXAqxkWtwGeA7ztNxaedSTuv13qDFMXLHF4fWfGtnOoK/M9oKn+\
+SpOKhkCmVvdhEXksNdxaXdIhN+0xskE04bwt8d8X8/9UYoysoA83wjrya9LBmZnCUPoa+\
+vPVrtbG1trLQ3NrxztUV1qHxvbhG4IQcFHxVS8rhvIkCeFpBiysjm66AQpUdXBTZmWVQvdyRynozLK\
+2OH1bqAbJRYhKQm7fH//gvx+GIHufpKoS7lI+\
+8y6vfGAcBykgOCVUoB9U1eAUtMHnjOpkWQi415a4eSMhDn26cUeDhSbxCidlOe8Vdufcct76gsnTqe\
+5kRisQK8crZWSpSrxOP71shkG8gP37Cxtx2NBrJ9hos3bkxs42Auvgv3kyiofLmEZBMf7k0RpxMy3F\
+/du0S6faQoz7Nkymze5t6ICtYgaFSs2zIbHMlg7YYdJQOzeqZNkf+y/c5pweyxS+\
+0R8rrg8c66ZYRD8r2iPK8Kd+UzZHvHcOdH29C4I1s/ADNRyN9XqO5VSlV3nrbHmc3K/\
+7MFxmGTp2TKu+Yc0m04qcxu1vO2HKHq/4JjUfUrQK/Dhjl3txh65x4kSZ/rDlyxPsSZ7/\
+uesi1Xc6XL5SVW56rzoOW8+6WpjLi8+\
+ZVPXQr4OOPMmYfvozg3nYsZv5V7nC2OAuVDJzu7ilnkCJDfI5f7Bn3Ncze79VwnGYV+\
+0d26SOpFAQTZXkpthjls2CYjfw/3+vuenyZRhA1PEOm2yYPnoOaos+\
+ItLH3686VPP76jmjduyFvN27Knmp/KGx83/ds3b/\
+lLKrix1L2NzM92qvJOzFehDoGYa67ltfMpNcYp7CvVH0iZ5YTrudPjxFlmT++Cvfft1cQfc9+\
+CoG8gIR+PvHcrH50CHhFS2VJmtbViIlXPc7LjAHNXZSZJ/Bfy6uaswZTUa66qn+etDXj/9OVfMq4/\
+74yr9pEwdVUk1unI2KZRteuCBZK67AQ3RpHogj6ZasJMi6FM9wOU6AZL5jD8Gv2UEwfmJiQw4YPf+\
+FCc0VNo8SHhY04asebXtcRarJEb8GGlfTlSws+\
+TNLo9Viog2bJCiCARcZIBST0owSwh2RIog4Uysbrhjk1g07Q/\
+MF1KIUXEQopwFP8NNfSA9g3HOnNohJkRoBRdOCQdST1YFrvXwTHySczrCi0kjAyi0HQiSvx90gxKOk\
+nz0hSBO8hhZoNUKYYLT76vjdaY1hrzNLKWKSakdnKEFMgnf7pc29vbc4s1Ak4fCCVyVWACYKtD1MVs\
+fRqiIJXZkB31a74jRwSXDA0qAfysTIUO+7FeFgsLh7+5KX4mpr+\
+5ubAAuOu9k4j0uTPtT4G3haEbYsJoGLbFlpFB+QpwcOHTT1uf3mkR8M3trZ1O+\
+1HnwwpLLZRCRo5P4ureNQHpluCJqwvXCANq6zVEe+NJ+\
+2vvFAFC3YxmLIv1DLRomNxQOZwEYTAVGXISxgPahRyU9MZC3N2j63cXyKzgC6Lph6CCemZQrBRRMJr\
+SZutdhXOvwLfkzUV3asVCgu4llFDQb8ZQlsXTSHZV9OzqSPqRypbHaXitotPLtfnr4mmHtCHfBJtf5\
+C/XeDG/eOuAuopqkm/\
+sj8NALbp1t2xO8SxIeIxGfiCjQQiKgEVeNYvXrAkIN5Qg9GeI1tNhF4GuEI6RKiueJBupcgWxfr8lt\
+mKwMLC+Kz9JFk+\
+6zm5s5iJOjMQDogxAFPu0L5Qa8REoCTHN2NEo0Rz8seExVLlni0loGOTZB1CqgXAtXIIMyHpH1DWkG\
+BDhyKpxPQgXpHf9KOni4IEEdwBSmxvC7IrmXbGidqNMpzjYjiZyqtktGr0RMVdbZEvUc2dLJW/\
+KllZAvKpa/ZagZDxdQb2D6kQr4r3x8wSO1AjEQTfDDMhAYOw1oYM0JaRmaDYDj87tSeGF8dN9cQhT/\
+/e/f7ZXJnqvfWSR7jQDKDEES9P4ZGGTjxmaVN8piY/akgPXKEoyuAgZ4BZTE+URmVXenI5UH+\
+UF0zCU+1ZflNShCWrwXaAQKVpgnFMeXUMKFjRUZU5KclhI0st0sTpQWpAmwdgnyIgcZluDuUKwJoay\
+b5yP/Ua53AhHk6iQJpA08kJlyzY9sQkt1dSt3HNyUtRP2NwtRZIhQWhRVAo6UHqE0Htr97d21gh4Pp\
+4j+Kz4lDceCd6UdQ0kMiLpk7px1KfsEsoYgrMUjLvMn4CDH9tV3IcQepQ2igC5XkNQ1x4VYkPgW4tO\
+Rsb7seBU1f3Df0p/YAjIQAwZKXkNyPBzb+tRyZ1J84ESmaEE/\
+g8VZYep4bI8kGFESmnRtVlXmJJ1JX5IMzB7VC/\
+XuLwWVPIvV53GNxGnyzU7e7RbKrmz2LBbiinpMjKhDMaPNOcFnnpE+W+r5jEiy7Vva/\
+P1DEVOfbmecKej3sAXY9JZqHR9GTvm62Fgf8p3a+\
+5T0W58CwpMsLQVKwopwyR1RkTOAXzlMFdGBhU3DEYhLWPuQOMgOPAHciOzvsL+/0pDXCliwu6i+\
+whos98bR3z87iLl+brBQcL8sinjcDSOGIMrdeD/vDb/nKh2OXd9+amjuTb/\
+rPb8FGFpW4ycKi4v31QWGI+gTXIbwSDh1V4gOQ20RypzCZCG/\
+OiBhzA4vLJIUW6k05cXahsyzChqFHmcKViAGcm12Ex+aTIwWfEVMo50al0FzCyEnz+\
+F5wapWa5XisQjzD6yVuZxZ8CVWBJxQaS1CWmwSvKmfTeTcT4FsdnVLraaIc9qy6MhFSQqpkFwKdWpl\
+F1cUJnrEtNPxC2GpbQRNaMyGXtoHqcoyuSR0FFJY6N4+UaCX74ViCIKV/\
+KmChU5LqCD0BFXPrkCexpHARFHAbx8C3k62mkobVHFxGUJrfnweNAb0UOhVUSjnF5XY7r6sqsyfInF\
+Evu8OzcavNWVmQ4dfeKJJZxwNWqlcLVVaEFijq8NBhQgj8K8YWB+8qr2wKQRoi9vE+ZmVmdarjuS/\
+3AIOanMB7v6h0A73rwKGqv4nnz3rClOVPebnunQHDHEJ6or7ruVshnyR7Itm/\
+2SKofU2OEMWRs9k4gGG6/\
+sxcZp9PL8IfPEJQW7Tan9agBol0m9uE9kElMcgWMTV3fr3DsjInfrXFfVuYNF9ZTerV87RTZESRmp4\
+znPbDsp7JAA+LoTQo75anJCbO05Mbx6PvCKwcNezKdYA/6AEEDUn0L3y1D8/\
+4JMm6xL6moepdOsfdc2a2VCqfY7LkDT80vTMagcJq2lNsB41MySZkCxyKTM0haPpoaAe+\
+1Sp44KOmILOWDiIPWOpw3bsoNj7ysqNfFrQwzMKyp49DSjPmRGj9OGU+\
+PhKSX8voVAsuYEvjBzlEujV8hfXYoAHulBMhF0vNmdNum/KGgi7pn/EaKdrcOOl3ORCK4VG8tCt5/\
+V7AGuC8vNTJKczFNtYV6TmoSFl4NEmSJfulkMSrkpDijbjiZ1aBX9gn1KU1xDnJpJDhXuaXA2wSVgu\
+QGYl69H2m8U1VOUwA7hIXNeUbOrRSWnLDVoHQzuAh+\
+EgenmyqI3SxHFlb7y2Mvy4hmawL1uKLjtYENrDE+KClnb57WCvHpqm/\
+XO97taPy8pLOlcv6Z0TVHERgk1t3uoROFut6kRPWuwpvBkc937n7/\
+526dWlZ7tNUoJD8wz6SdjBupnadT8hT0HWmP3ULoFVToWOHHOdMG7qkcVmspHnNzwpgZjkiIoR+E+\
+5Z9+mlD3VcaaRwZEHYyCkkrbmDSsBtgTqAGWSTfj0M+FugG89+\
+WYqpdsCtL2VvP3LvTbmvtOtXvtVb0F6d/Lm/rxhlPS51PMnG+yVv7RR+I+Fd82L9ew+\
+0ojlJoEXfjinumP2efU+Xajq4EamtEHzIj8Tnn2YHoKbMQVCJVxDLjVbDZrtc++\
+C4ffcK733V36XtuOYLQoWq4eXjPJVvMOEXmHN6o4+O5u9ZB0M8Oae19xqvci0Ri+1+\
+mmp9RqO3zWEN8eNnBTQ9x53hDtQ6U3qCUmmnfFt7v1w916A9mRQWq3/\
+rwONq49Wm3vPHi8ufao49VKjztq1H86CVczjauhCnwaP/uF+\
+PAppzTPrsJfoN6kkmt5cdEabPPbMHh+\
+7cVUU2PnirYjMbAOzmJhYRe4fnv4fGGhwsLl2odPiejTLpzB/\
+3gpPYTMexKl6QSRAAb16OsVc9W9BDE1/uWfXloPVLJq/\
+3TkKfmb3bq5qiE227t1SNB8fKQmMPx0X6zAMPH92R8rLGf8T5d+frt1e6kh6pvkF+\
+vPXkziOnWjzTExpENlFpFEKsi2TsWGuY4Asw4/Z2MUXMWIzOzWQCx9PGywHfaQxYgJ3Py66Xp+\
+D4IwfLZkMS/\
+AZrG7aAVgsMGnPxnj79xo3fi4YLxYFPWHiJMvJQKKAROV94ANKCsMmgQgPKQvwfgn5PN4LjXheLIOL\
+0l/7UNdkXURqV4m0rA/yBDUJt8byw1njQ7hnldlMRsycjzufNsueGkqVI4AGU+\
+5mV7U3Xkr3CUm1BLOKfiMm0jUNL3LKH82cs9/+\
+aNYulvHJqKKfj5mw83Shpt3T6OoVprkYH8YmB43ZWAj5Ye9qfGC+\
+fNjnmC5NhdR3XLTA0NrvnhFl7vlrwTwPo3r7WemgTd9dhchVPr71ALNw55ddqnuiFpg/\
+pgmqQSvJbZNlmim6fTKoLhX6uJeG9p1TgxPNZK4hBZLkOWXb7JyniSUdVKAVxKJk8ur8qECE2UyAvt\
+0hN8jKPOKLX/uoXTG7bf8PjONMZtT8zc2lMMbEEPzlMXNrot3IyZR/\
+9rmDvRXgEWKZrNnemSAI3qQD3iqOXK5cDCIazvnQE3b7Ept8dQuLTWZCr2xKGZGZsxpn1BwLVCYRUH\
+k6uOd9UcPzP0rj3d2oJ+lwYwtN7h5anKknCFEk506EaPy0ZXjC/\
+eZrCggTMef4mZLo321UxZMT4a0J+PidTQwpRD4wKUIV0uofzSjQtM7RsToduhbD0Brm4+\
+9jqCqZTjK3EamwTakC6E3aEgfu3cdlCbvm0E/\
+kOGXIQhnLTcZ5NOEojZlDmm1StOkRDp1cFOa3fMBFGlj7h4jjecW3GQwJfAEQwUoFNa+\
+Wtsp8zgf5sV0uRu2mRFk2cCoCnRveWyTn8CGqbYKGMCb8JzbTN0y1iOrOFYx7NsX+\
+nMZMzTApilrLknVohAkLTMXtJVHlvKbBHmQhDSa5WmzGTFQkgwdZB84U/qZBymm/IO85L7tLFOha/\
+ocZl7nZuizz26oLaBM7HN9529kEKi0JHYTzNw9mYz2LfA6dhKW5pyut9w4lY3DkuGYb4kwIC3Zbp5b\
++rNEO3zPppW61mkJQSC9LZ6ksAoXNsBqxL0g8i3ctVean51ZT8FCh4JBgJrSwlyvjS0vUudzeoyZxW\
+R9+T2IbWbnCSHusxg5W+\
+GZ754SrXiiw4YxCG3KNkrVQWjqYUeXrZOiSI5IdbV5zGmtz7U8SMnoD76sYKf5AyxqPYzSkEg31ouC\
+3YqKXUM+dtaNAprBiefW+E8amEhPes3jIXaTOYLauW0+\
+74zV9txaNX4xcmoEKh4uztHf1paeLT55qBCGoVtWEbnannk4SGoynJYmK9zzb4kVyUbDf0xLj4hsnJ\
+XZL4sb5/MXpaVr/+\
+PMFtW2yCDVhwL5EAMgSEcfQeZvQo7c3RDrV8jd8QiqkjmVXkBCkZZa4vp1rzx2u359WbRPmkW5WZsR\
+gopLL+cKnMCeruqHcat2k6Cv2rEIAe6UJ1nVV5HFXOvoOKtVu0Vw2qVZloN1+\
+nzLRDejhccwzoVb6w+66uTpF8x+i4aG60Yn7dujnJGApNgA+DUQWM6Czp9/Fteeomn+\
+DD244xZpnkHdzRiz0thOmuGhuGVox4GpkmmrymZ8vWlY23qB1v3bhcKhVMfAlDWXJnr1W9wtKgZ09Z\
+v84fh5G3afljLvrHmPNzo1usqQ9fSJsfRcuezbFJrwAxs/O6rxZASWxGJsm/OGgyP1g+\
+T05lLLDLHxz5jEl41jhFK4h/\
+I8t8XZHutE6U4wlv7IJA8z7r3okXXj1GdOH4NxdsQWjqOAggXwzvWRfjZmwT/\
+dOh5V6pyejCivfv9o3rlT4Ln0cesZydyI+mpXDsJPriGSZhQchrZflwN8CffmTORWPp2/\
+RTKtSFE8TCb0DK5h8wzKuHUCLywjMAByR5DWeVeQnkkjBKYVn+\
+iESu6m4DQ7t6NYytOZdKIAjY80t7FkqnfJCMrrD5KEUz37YOClrj5FFrXahqIUyVgZ4jXJz3hPXONe\
+3lGa7ATAz4PcQ+lKIKQsmLKVhGc8hvn0/wkSovprem+U/zL/tD96+D+211pL"|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"dab85505-fe9a-4d9d-96bb-3b84f80298f3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Set parameter Username\"\>"], "Print",
+ CellChangeTimes->{3.955532999344145*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"8e5d6b0f-dccb-4d4f-ae66-98240ae661df"],
+
+Cell[BoxData["\<\"Academic license - for non-commercial use only - expires \
+2026-03-11\"\>"], "Print",
+ CellChangeTimes->{3.9555329993461456`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"df12652f-ecce-2344-a95b-713862fb0215"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+ Starting maintenance at day 56 would work for us. Can you confirm this \
+works? \
+\>", "ChatInput",
+ CellDingbat->Cell[
+   BoxData[
+    DynamicBox[
+     ToBoxes[
+      If[
+       TrueQ[CloudSystem`$CloudNotebooks], 
+       RawBoxes[
+        TemplateBox[{}, "ChatIconUser"]], 
+       RawBoxes[
+        TemplateBox[{}, "ChatInputCellDingbat"]]], StandardForm]]], 
+   Background -> None, CellFrame -> 0, CellMargins -> 0],
+ CellChangeTimes->{{3.9555331342173653`*^9, 3.9555331347546177`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"2eabf95b-b4bd-984e-88d3-834412092d2d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicModuleBox[{Typeset`var$$ = False}, 
+   StyleBox[
+    PaneSelectorBox[{False->
+     PaneSelectorBox[{False->
+      FrameBox[
+       TagBox[
+        TagBox[
+         TagBox[GridBox[{
+            {
+             PaneBox[
+              DynamicBox[ToBoxes[
+                (If[
+                 TrueQ[$CloudEvaluation], #, 
+                 
+                 Pane[#, ImageSize -> {16, 16}, ImageSizeAction -> 
+                  "ShrinkToFit"]]& )[
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ChatbookExpressions", "WrenchIcon"]]]], StandardForm],
+               ImageSizeCache->{16., {4.900390625, 11.099609375}},
+               SingleEvaluation->True,
+               TrackedSymbols:>{}],
+              BaselinePosition->Scaled[0.2],
+              ContentPadding->False,
+              FrameMargins->{{0, 0}, {0, 0}}], 
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ChatbookStrings", "FormattingToolUsed"], StandardForm],
+               
+               ImageSizeCache->{
+                30.095001876354218`, {0.15600000572204564`, 
+                 9.256000339508056}}],
+              StripOnInput->False,
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             StyleBox["\<\"Outageplanner\"\>",
+              StripOnInput->False,
+              FontWeight->"DemiBold",
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             PaneSelectorBox[{True->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialCloserIcon"], False->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialOpenerIcon"]}, Dynamic[Typeset`var$$],
+              BaselinePosition->Baseline,
+              ImageSize->Automatic]}
+           },
+           AutoDelete->False,
+           BaseStyle->{ShowStringCharacters -> False},
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {{0.25}}}],
+          "Grid"],
+         EventHandlerTag[{"MouseDown" :> FEPrivate`Set[Typeset`var$$, 
+             Not[Typeset`var$$]], Method -> "Preemptive", PassEventsDown -> 
+           Automatic, PassEventsUp -> True}]],
+        MouseAppearanceTag["Arrow"]],
+       Background->RGBColor[0.8980392, 0.9686274, 1.],
+       BaseStyle->{
+        "Text", "IconizedDefaultName", FontSize -> 13, LineBreakWithin -> 
+         False},
+       FrameMargins->{{4, 2}, {2, 2}},
+       FrameStyle->RGBColor[0.6117647, 0.7960784, 0.890196],
+       ImageMargins->{{0, 0}, {8, 8}},
+       RoundingRadius->5,
+       StripOnInput->False], True->
+      FrameBox[
+       TagBox[
+        TagBox[
+         TagBox[GridBox[{
+            {
+             PaneBox[
+              DynamicBox[ToBoxes[
+                (If[
+                 TrueQ[$CloudEvaluation], #, 
+                 
+                 Pane[#, ImageSize -> {16, 16}, ImageSizeAction -> 
+                  "ShrinkToFit"]]& )[
+                 Dynamic[
+                  RawBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ChatbookExpressions", "WrenchIcon"]]]], StandardForm],
+               ImageSizeCache->{16., {4.900390625, 11.099609375}},
+               SingleEvaluation->True,
+               TrackedSymbols:>{}],
+              BaselinePosition->Scaled[0.2],
+              ContentPadding->False,
+              FrameMargins->{{0, 0}, {0, 0}}], 
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "ChatbookStrings", "FormattingToolUsed"], StandardForm],
+               
+               ImageSizeCache->{
+                30.095001876354218`, {0.15600000572204564`, 
+                 9.256000339508056}}],
+              StripOnInput->False,
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             StyleBox["\<\"Outageplanner\"\>",
+              StripOnInput->False,
+              FontWeight->"DemiBold",
+              FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+             PaneSelectorBox[{True->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialCloserIcon"], False->
+              TemplateBox[{
+                RGBColor[0.2, 0.5137254, 0.6745098]},
+               "DiscardedMaterialOpenerIcon"]}, Dynamic[Typeset`var$$],
+              BaselinePosition->Baseline,
+              ImageSize->Automatic]}
+           },
+           AutoDelete->False,
+           BaseStyle->{ShowStringCharacters -> False},
+           BaselinePosition->{1, 1},
+           GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {{0.25}}}],
+          "Grid"],
+         EventHandlerTag[{"MouseDown" :> FEPrivate`Set[Typeset`var$$, 
+             Not[Typeset`var$$]], Method -> "Preemptive", PassEventsDown -> 
+           Automatic, PassEventsUp -> True}]],
+        MouseAppearanceTag["Arrow"]],
+       Background->RGBColor[1., 1., 1.],
+       BaseStyle->{
+        "Text", "IconizedDefaultName", FontSize -> 13, LineBreakWithin -> 
+         False},
+       FrameMargins->{{4, 2}, {2, 2}},
+       FrameStyle->RGBColor[0.8392156, 0.9294117, 0.9764705],
+       ImageMargins->{{0, 0}, {8, 8}},
+       RoundingRadius->5,
+       StripOnInput->False]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic], True->
+     FrameBox[
+      TagBox[GridBox[{
+         {
+          TagBox[
+           TagBox[
+            TagBox[GridBox[{
+               {
+                PaneBox[
+                 DynamicBox[ToBoxes[
+                   (If[
+                    TrueQ[$CloudEvaluation], #, 
+                    
+                    Pane[#, ImageSize -> {16, 16}, ImageSizeAction -> 
+                    "ShrinkToFit"]]& )[
+                    Dynamic[
+                    RawBoxes[
+                    FEPrivate`FrontEndResource[
+                    "ChatbookExpressions", "WrenchIcon"]]]], StandardForm],
+                  SingleEvaluation->True,
+                  TrackedSymbols:>{}],
+                 BaselinePosition->Scaled[0.2],
+                 ContentPadding->False,
+                 FrameMargins->{{0, 0}, {0, 0}}], 
+                StyleBox[
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "ChatbookStrings", "FormattingToolUsed"], StandardForm]],
+                 StripOnInput->False,
+                 FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+                StyleBox["\<\"Outageplanner\"\>",
+                 StripOnInput->False,
+                 FontWeight->"DemiBold",
+                 FontColor->RGBColor[0.2, 0.5137254, 0.6745098]], 
+                PaneSelectorBox[{True->
+                 TemplateBox[{
+                   RGBColor[0.2, 0.5137254, 0.6745098]},
+                  "DiscardedMaterialCloserIcon"], False->
+                 TemplateBox[{
+                   RGBColor[0.2, 0.5137254, 0.6745098]},
+                  "DiscardedMaterialOpenerIcon"]}, Dynamic[Typeset`var$$],
+                 BaselinePosition->Baseline,
+                 ImageSize->Automatic]}
+              },
+              AutoDelete->False,
+              BaseStyle->{ShowStringCharacters -> False},
+              BaselinePosition->{1, 1},
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             "Grid"],
+            EventHandlerTag[{"MouseDown" :> FEPrivate`Set[Typeset`var$$, 
+                Not[Typeset`var$$]], Method -> "Preemptive", PassEventsDown -> 
+              Automatic, PassEventsUp -> True}]],
+           MouseAppearanceTag["Arrow"]]},
+         {
+          TabViewBox[{{1,"\<\"Raw\"\>"->
+           FrameBox[
+            FrameBox[Cell[BoxData[
+              
+              PaneBox["\<\"TOOLCALL: \
+Outageplanner\\n{\\n\\t\\\"startweek\\\":\\\"8\\\",\\n\\t\\\"duration\\\":\\\"\
+2\\\",\\n\\t\\\"generatorassetnumber\\\":\\\"3\\\"\\n}\\nENDARGUMENTS\\n\\\
+nENDTOOLCALL\\nRESULT\\nplanoutage[Yes, it is possible to disconnect at your \
+requested time. ]\\nENDRESULT(wghbh)\"\>",
+               AppearanceElements->None,
+               ImageSize->{
+                 Scaled[1], 
+                 UpTo[400]},
+               Scrollbars->Automatic]], "Text", "RawToolCall",
+              FontSize->11,
+              Background->None,ExpressionUUID->
+              "25f0a15e-401b-5b46-928c-498ae9e5acc2"],
+             Background->GrayLevel[1],
+             BaseStyle->"Text",
+             FrameMargins->5,
+             FrameStyle->None,
+             ImageSize->{
+               Scaled[1], Automatic},
+             StripOnInput->False],
+            Background->GrayLevel[1],
+            FrameMargins->10,
+            FrameStyle->None,
+            StripOnInput->False]}, {2,"\<\"Interpreted\"\>"->
+           FrameBox[
+            TagBox[GridBox[{
+               {
+                ItemBox[
+                 PaneBox[
+                  StyleBox["\<\"INPUT\"\>",
+                   StripOnInput->False,
+                   FontSize->11],
+                  FrameMargins->{{5, 5}, {1, 1}}],
+                 Background->GrayLevel[0.95],
+                 ItemSize->Fit,
+                 StripOnInput->False]},
+               {
+                FrameBox[
+                 TagBox[GridBox[{
+                    {"\<\"startweek\"\>", 
+                    InterpretationBox[
+                    
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox["8",
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox["8",
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[8]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    8,
+                    SelectWithContents->True]},
+                    {"\<\"duration\"\>", 
+                    InterpretationBox[
+                    
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox["2",
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[2]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    2,
+                    SelectWithContents->True]},
+                    {"\<\"generatorassetnumber\"\>", 
+                    InterpretationBox[
+                    
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox["3",
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[3]; 
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Center}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    3,
+                    SelectWithContents->True]}
+                   },
+                   AutoDelete->False,
+                   BaseStyle->"Text",
+                   FrameStyle->GrayLevel[0.9],
+                   GridBoxAlignment->{"Columns" -> {{Left}}},
+                   
+                   GridBoxDividers->{
+                    "Columns" -> {{True}}, "Rows" -> {{True}}},
+                   
+                   GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                   GridBoxSpacings->{"Columns" -> {{1}}}],
+                  "Grid"],
+                 Background->GrayLevel[1],
+                 FrameMargins->5,
+                 FrameStyle->None,
+                 ImageSize->{
+                   Scaled[1], Automatic},
+                 StripOnInput->False]},
+               {
+                ItemBox[
+                 PaneBox[
+                  StyleBox["\<\"OUTPUT\"\>",
+                   StripOnInput->False,
+                   FontSize->11],
+                  FrameMargins->{{5, 5}, {1, 1}}],
+                 Background->GrayLevel[0.95],
+                 ItemSize->Fit,
+                 StripOnInput->False]},
+               {
+                FrameBox[
+                 InterpretationBox[Cell[BoxData[
+                   PaneBox[
+                    InterpretationBox[
+                    
+                    DynamicModuleBox[{
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$}, 
+                    TagBox[
+                    TagBox[
+                    PaneSelectorBox[{False->
+                    FrameBox[
+                    RowBox[{
+                    "LLMToolRepositoryTemporary`planoutage", 
+                    "[", "\<\"Yes, it is possible to disconnect at your \
+requested time. \"\>", "]"}],
+                    Background->None,
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False], True->
+                    FrameBox[
+                    StyleBox[
+                    RowBox[{
+                    "LLMToolRepositoryTemporary`planoutage", 
+                    "[", "\<\"Yes, it is possible to disconnect at your \
+requested time. \"\>", "]"}],
+                    StripOnInput->False,
+                    FontColor->GrayLevel[0]],
+                    Background->RGBColor[0.87, 0.94, 1],
+                    FrameMargins->1,
+                    FrameStyle->Dynamic[
+                    CurrentValue[Background]],
+                    StripOnInput->False]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    MouseAppearanceTag["LinkHand"]],
+                    
+                    EventHandlerTag[{
+                    "MouseEntered" :> (
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Thickness[
+                    NCache[
+                    Rational[2, 45], 0.044444444444444446`]], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 
+                    0}, {0, 1, 0}, {0, 1, 0}}}, {{{10.5, 18.75}, {10.5, 
+                    18.}, {9., 18.}, {9., 15.75}, {13.5, 15.75}, {13.5, 
+                    18.}, {12., 18.}, {12., 18.75}}, {{6., 18.}, {6., 4.5}, {
+                    16.5, 4.5}, {16.5, 18.}, {14.25, 18.}, {14.25, 17.25}, {
+                    15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
+                    17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
+                    12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
+                     0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
+                    0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
+                    14.25}, {14.25, 14.25}, {14.25, 13.5}, {8.25, 13.5}}, {{
+                    8.25, 12.}, {14.25, 12.}, {14.25, 11.25}, {8.25, 
+                    11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
+                     9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
+                    6.75}}}]}, ImageSize -> 11], "\"Copy to clipboard.\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     "MouseExited" :> 
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$], 
+                    "MouseClicked" :> (
+                    NotebookDelete[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$]; 
+                    CopyToClipboard[
+                    LLMToolRepositoryTemporary`planoutage[
+                    "Yes, it is possible to disconnect at your requested \
+time. "]]; Wolfram`Chatbook`ResourceFunctions`ClickToCopy`cell$$ = 
+                    FrontEndExecute[
+                    FrontEnd`AttachCell[
+                    EvaluationBox[], 
+                    Cell[
+                    BoxData[
+                    GraphicsBox[{
+                    FaceForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    EdgeForm[
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745]], 
+                    RectangleBox[{-18, 0}, {18, 8}, RoundingRadius -> 0.5], 
+                    InsetBox[
+                    BoxData[
+                    FormBox[
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox["\"\[Checkmark]\"", 
+                    RGBColor[0, 
+                    Rational[2, 3], 0], FontWeight -> Bold, StripOnInput -> 
+                    False], "\"Copied!\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.4}}}], "Grid"], 
+                    "Text", FontColor -> 
+                    RGBColor[0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], FontSize -> 12, FontWeight -> 
+                    "Plain", StripOnInput -> False], TraditionalForm]], {0, 
+                    4}], 
+                    EdgeForm[
+                    RGBColor[
+                    0.9607843137254902, 0.9607843137254902, 
+                    0.9607843137254902]], 
+                    PolygonBox[{{-2, 0}, {2, 0}, {0, -2}}], 
+                    RGBColor[
+                    0.8980392156862745, 0.8980392156862745, 
+                    0.8980392156862745], 
+                    LineBox[{{-3, 0}, {-2, 0}, {0, -2}, {2, 0}, {3, 0}}]}, 
+                    ImageSize -> {Automatic, 40}, Background -> None]], 
+                    Background -> None], {
+                    Offset[{0, 1}, 5], {Center, Top}}, {Center, Bottom}, 
+                    "ClosingActions" -> {
+                    "ParentChanged", "EvaluatorQuit", "OutsideMouseClick"}]]),
+                     Method -> "Preemptive", PassEventsDown -> Automatic, 
+                    PassEventsUp -> True}]],
+                    DynamicModuleValues:>{}],
+                    LLMToolRepositoryTemporary`planoutage[
+                    "Yes, it is possible to disconnect at your requested \
+time. "],
+                    SelectWithContents->True],
+                    AppearanceElements->None,
+                    ImageSize->{
+                    Scaled[1], 
+                    UpTo[400]},
+                    Scrollbars->Automatic]], "Text",
+                   Background->None,
+                   FrameBoxOptions->{BaselinePosition->Automatic},
+                   PaneBoxOptions->{BaselinePosition->Automatic},
+                   ExpressionUUID->"ec5a24c9-1ec9-8747-a643-5cd294c1ba12"],
+                  TextCell[
+                   Pane[
+                    Wolfram`Chatbook`ResourceFunctions`ClickToCopy`ClickToCopy[
+                    LLMToolRepositoryTemporary`planoutage[
+                    "Yes, it is possible to disconnect at your requested \
+time. "]], ImageSize -> {
+                    Scaled[1], 
+                    UpTo[400]}, Scrollbars -> Automatic, AppearanceElements -> 
+                    None], "Text", Background -> None, 
+                   FrameBoxOptions -> {BaselinePosition -> Automatic}, 
+                   PaneBoxOptions -> {BaselinePosition -> Automatic}]],
+                 Background->GrayLevel[1],
+                 FrameMargins->5,
+                 FrameStyle->None,
+                 ImageSize->{
+                   Scaled[1], Automatic},
+                 StripOnInput->False]}
+              },
+              DefaultBaseStyle->"Column",
+              GridBoxAlignment->{"Columns" -> {{Left}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+             "Column"],
+            Background->GrayLevel[1],
+            BaseStyle->{Editable -> False},
+            FrameMargins->10,
+            FrameStyle->None,
+            StripOnInput->False]}}, 2,
+           ImageSize->Automatic,
+           LabelStyle->{FontSize -> 12}]}
+        },
+        AutoDelete->False,
+        BaseStyle->{ShowStringCharacters -> False},
+        BaselinePosition->{1, 1},
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{0.25}}}],
+       "Grid"],
+      Background->RGBColor[1., 1., 1.],
+      BaseStyle->{
+       "Text", "IconizedDefaultName", FontSize -> 13, LineBreakWithin -> 
+        False},
+      FrameMargins->{{4, 2}, {2, 2}},
+      FrameStyle->RGBColor[0.8392156, 0.9294117, 0.9764705],
+      ImageMargins->{{0, 0}, {8, 8}},
+      RoundingRadius->5,
+      StripOnInput->False]}, Dynamic[
+      TrueQ[Typeset`var$$]],
+     BaselinePosition->Baseline,
+     DefaultBaseStyle->"OpenerView",
+     ImageMargins->0,
+     ImageSize->Automatic],
+    Deployed->False,
+    StripOnInput->False],
+   DynamicModuleValues:>{}]], "InlineToolCall",
+  TaggingRules-><|
+   "ID" -> "wghbh", "Name" -> "Outageplanner", "DisplayName" -> 
+    "Outageplanner", "FormattingFunction" -> Automatic, "ToolCall" -> 
+    "TOOLCALL: Outageplanner\n{\n\t\"startweek\":\"8\",\n\t\
+\"duration\":\"2\",\n\t\"generatorassetnumber\":\"3\"\n}\nENDARGUMENTS\n\n\
+ENDTOOLCALL\nRESULT\nplanoutage[Yes, it is possible to disconnect at your \
+requested time. ]\nENDRESULT(wghbh)", 
+    "Parameters" -> <|
+     "startweek" -> 8, "duration" -> 2, "generatorassetnumber" -> 3|>, "Open" -> 
+    False|>,
+  Background->None,ExpressionUUID->"a9ef2160-c644-a84a-83ad-3a370389b129"],
+ "\nStarting the maintenance for your generator asset number 3 at day 56, \
+which corresponds to week 8, is confirmed to be possible. You can proceed \
+with the outage for the specified duration of 2 weeks.\n\nIf you have any \
+more questions or need further assistance, feel free to ask!"
+}], "ChatOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     GraphicsBox[
+      TagBox[
+       RasterBox[CompressedData["
+1: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
+tXDVcKlBCrhGKOa9RonAJy2Z8yef/IH2rn1BUxNbFAxE67peRTinARrGhHp9
+t613RinkmaJe/w4NhB41Zc4fHP2eDne/pqWFm5SIj5l+jTjZ9x7ag6KzBySf
+fzOrnj3OGAXdYxTzrVAieGjLnK9MfUbTo4c0mFikSLjmvvg7fPrzcZrsGoDW
+pwjm2lXFnT8Xma979apD+X82v80Pkd+dYNlfpN7AKqXCRzQSfWhpzucGP6ep
+5AMajbM8965TJDhIPk/FefHqfza3lwYSs7Qwczd/XqrPGxb92YzsGoDWx+rs
+pFz9udSed84/D7vWyOccZpn3WNKHfasvoXoowH4HBDxJCnnT1BdcKlqmfi60
+TMnwBo323KXByB7FQytvC6+Q5hthf3cgz+UUPsM2Mds+GhyYp+WF+++ci9wb
+GxX9vVPZNQCtTxHMweXPULyQ89J1MhHPBvlc6fz8m9X5sTM+H5ceXKS15Ue6
+55+Pp7dFXwNzcWA5Yf06V3RzXrpOhj9XC7szLPfC84VaSrx/lLXZt1mWvzO0
+7pXnfGHmgd7X7JBdB2AfSmHOTLug5nchFJ11cJrrpuGcX1wn0+u7TmHPHHld
+8Xz/W3Yu65WMj1Nm/gYdXf+mpvXtPOc769/rfY+MyTXRKbtWoer7mGFeGKzJ
+s+KfzRUzrHu/FcHY3KloFHHdrjnnF9fJxIO3qMe3wbI/xdr8qtaLNVxPZJhG
+B9doeY6NsXe+N+U9lvOcR8IDou97aiDL6eJ9PS3e59cG64HXD/oLNlX8vfzK
+hNp9XbzfJxezL/r6XnXE1JyXWyczGH5AieANivoWKeKbzs+78/n3RmTZ6w5T
+2J+iZCxDQ33rtDD6iNZnv7LsfbXznI8OXxPeI0GmjebZSA2kZdc0vJPxjMW1
+fp79sv89qK5bnnO95+djMfZ3tGMaYlLaAfUGlt6abw/70hT0JAu8A2/w+fXS
++XZuKLZH4333aKL/Hi0Mnkh5L/U855m5R5XaXjMyrScju7bhTcY7G3C/hfhz
+cs15S2rO7bIezuycX1v9Tu85eqNgbwsbUGp8p8QsHjWFnFuY84H4vOycn8mu
+8XbH7kFHpfvkcHjI0R1iwox561LPBdRl5NzCnC/OiPd/rZWq+sipRlhfTGMM
+rWfolF3r7UzR2dflyqUBuvT+HF1+P0NX3l+iKx8sU9cHK9T9YZYcH66S4/I0
+KVcmSekaJLW7hxSHr/p6yffZj5FzC3O+ufINeb3V991dzgDr88cp6B+ncDBD
+4cAyRYL7FPbtUtCzTX7XFnnVDXI71kntWiZH15De18OcnNyc75dtw7v99NEv
+FujSLxbFOf9ojZRL7B5f2iDn5U1mi1xXrpGra4GcjjTTy3Ksn313vs+OnFud
+82T/nP59cAcpGBigqDZNid4tSsWPaKD/Dvv/t6g/dkS9kRsUCx/o5Jz/3l9h
+dRMRfY+c7FpvZ4pgX5fuK1rNOXdf2SZP1w6zS97uPVYH08L6Cjo3kfMG5Dwz
++0R4D2KRSbo68ojGhz+h0cEHlB74mIYSd2vLeVcSObchUXve3RU0LeeiNt2p
+hCnsPELOG5Dz9aWvKBwqn0HelpuX8x7k3IZE43M+92ZGzt2OjLAd8alzyHkD
+cz46tCO8F4m+VXNy7vCLvkdGdq23M0Vnz4dL70/XnXNVKb/XEZ9/C6rXkfMG
+5jy7eEJeT/n1f15v1ISci3+nK9jbQjpFsBa163K8rpy7uxeF992jjFFIvYmc
+Nzjnybg4i6n4Tn05F8+3v5Zd46CzTsbhqivnqkO8b2FQ3UbOJeR8ceYpuZzl
+3+fz+/rqyrniEO6r8UJ2jYP+M/Suy4macu7uXhBm3K0MsIzfQM4l5Hx5/jkl
++sVterJvu7acdwv3rsHY3EZEfXfepl/+YL7qnKsO4XNUCijbyLnEnM9PfSZs
+092uQA05z7K/6xLd71eyaxveyrnwfbXurkjVORd9LT7/xsfmQXUfOZfUb+ft
+uSjnXH9sraqcOxXhM3MuJ7u24Z2sC989776UNiXnpXl3KykKOneR8watkxlI
+LOnm+1wkPGU45251Uu9r8Xcgsd+EzSh6Zxuy/nvXR9NV5FzYj3u3r6jG8++y
+IOfm53x+6mPq79XN4jsG+vYM5dznWql0nzOyaxqEWRfvF+XwUteHGUM5dzqq
+35+Rn9Hgd86S5jpAzuvI+c7GtzQxulPTe+fh4LCh8XnAs0Gq/r67Z7JrGXRz
+3qHo7DnB30vt/mjJ0HM1V/dUxfdYRDxqkkKuJeS8ipxn5u/nz2mo5Xrzta/x
+nqzh52r8ndQK/fVO2bUMFbOueza5ozta9XssqiJcD6mLj+P5OQ2aewM5L5Pz
+zdWn+XMa+FksNf0+ZflO9q9Vtb7d7ap4PlRGdg2D4ayX3Zf1ja4+wzn3de+T
+33GdPI6Z/LsrtdRjIfOe/DkNEc9mW+d8c/XT/DkN/CyWWq+lxxOiwcQmzUx8
+RlNjnxrOucetO7fOncquXag66/pnF3drLOdZwzn3Ow4ooByST8mSS+mvuUbP
++Zwp0jwZ6vffbemcP7jzE21kH7J2e5rlrPZsc+FggkaHrtPC9Bc0N/msqpx7
+K2f8pYL59aajFMbqL3XvrSPIcr5aVc6Dyo38Opmgyv6MmjblvMT8WejuUYr5
+1ikZvNfUOb9/6yc62H1Os1PbFArG6r82Li/19Vxl2X6cXyeTmf2yqpz3RQ9Y
+X73i50DGm1gx6/p7urOsO68sVp3z0nUyfnUhf45ivTVdmnu/e5Ai3nmKBw9Z
+5h/bNuerc09pduImDacy+bPTzLoGoWAfXR29TmuZ52+th6sm532xPZbximMt
+Pu+GPV2bHL+HSsV9n12kdk3XnPPzdTKa6zrrj0+aeg76OX4mAz+bhZ/T0B/Y
+ooHwEcv8k4blfCr1gCZTd/LnNPRq4xTy1z92ucjv02gotUTrK18K170azXlf
+bIdUtWJfCxlvIcayrpDaPVxXzkvXyUTce+R3jpNTNT/z7+SDn4fMaL6J/BkN
+3EB4h4ajtykdu00jeXdolOu5W9ZQdO/NWQ19oQUK+QbyrP7sAX+ERoZWaHP1
+C0Pr243kPBo29HwOGW9BipHxOs+6I8Iyvll3zkvXyUQ9BxR0TZNb/7lt24ho
+CRofWaWdzZOq32PRy3l64A4FfBXn27hXyHjrMpp13o93dc+alvPSdTK9vluk
+eVbz8+1qC5yNaoTH48vPt2fmj+nW4Q91va8myjnfZ4K/r2bg82DOrQ0Us27o
+DBeno4/lfNvUnF9cJ9PnY1/Du8zG3oMtk3uPx0+J+Bgtzh3Sjf2vTX0v9WLO
+r47kKKpdNfrZXiDj7UUR7An9Ljd5HAuW5fziOpl44JhiTXIm8rneaJrG0xu0
+lsnR7cPfWPr+eWnO06mD/JpXg5/zRHbNgbSs871oDJ3B6FRi5FeuWZ7zcutk
+BkK3KR7co6hvgYKeofy8m4w8a4FB6gmP03B8g+bG7tP63POG7zPBcz49niMt
+pHt+SimccQzn/Xj9tXOlfVKb7TOR0o7yEqFt6g1k8nPtEd8EBTzJvOBFJeci
+lwqdn5McXqGElqVUdIsm4h/T1cR96e+fV7PPxAV8LN4pu8bAPhTD/fjC+yle
+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
+        "], {{0, 250.}, {250., 0}}, {0, 255}, ColorFunction -> RGBColor, 
+        ImageResolution -> {72, 72}], 
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+       Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+      ImageSizeRaw -> {250., 250.}, PlotRange -> {{0, 250.}, {0, 250.}}, 
+      ImageSize -> {40.50000000000003, Automatic}], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "TOOLCALL: Outageplanner\n{\n\t\"startweek\":\"8\",\n\t\"duration\":\"2\",\
+\n\t\"generatorassetnumber\":\"3\"\n}\nENDARGUMENTS\n\nENDTOOLCALL\nRESULT\n\
+planoutage[Yes, it is possible to disconnect at your requested time. ]\n\
+ENDRESULT(wghbh)\n\nStarting the maintenance for your generator asset number \
+3 at day 56, which corresponds to week 8, is confirmed to be possible. You \
+can proceed with the outage for the specified duration of 2 weeks.\n\nIf you \
+have any more questions or need further assistance, feel free to ask!", 
+   "ChatData" -> 
+   "OEM6eJztXEtzHMd9l0yIJFYSKVqSLfvgNNes4sO7C4IPPRCJ9hIAScgAAWNA0QpAC70zvbtjzM\
+5spmewWEv8CDkkVTkkF+cD5AvkC+SaY66pHFLJKbnlmt//393zwIukbVU5VVaxxN2Z7n//\
+389edntt7/1uFCUTT0XKz8IkXkziTB1k+o0HMtKq7Z3rjseP5Uh555ZUX+\
+ZR1vYaXa1DncnYV8WyC908G6o4C31JULyzq6trPw95cZ4lD5J0JDM9s5Xmik7EI0/\
+uK5y1r1LNO3QBqnFfarWRJqNxpmdpKbaGftv73v3pWGq9qfQYy9XiUPl7YTwo9y3KTA2SNFS6/\
+7qeWQWK3vkNwE9iqdvee4tDmVnqNlI1PnrAd2nFUhruq/hxkqlekuwVwC/Ru0cAmaTTVRUPsuGv//\
+OM3bISj3P8LyDak9Sb+Z/f/s0/tr23F3EAAPfCKMym3Tfa3o+eJlE/laNVGQ9yOVBfADdQvqn+\
+Mg9TFXhvzN/u3PpJ27u4PlYpdsYDb6ozNeqfsdScexrGQTLR3tk16a97v/RmnsThARi6vC+\
+jnNm4HO+HaRKPIIr+ObfNU5oO8t5+qnrlUu/8fZn5w8+\
+TnnfW89NwnHlnsaC7seLNenlvT6WxivDRH6ogj1TQ9t5ajJI88PLxOEkLaZ5/oGSWp2D6a+\
+Y8SIrYnIY9sDZdifssfBzYfZ25Yl+p4P7Ue+\
+fzBOBjsdoRi6kaqbTtvVPViidPVpb0zOMkxkEX7QtiGfDR7vn3zfPMMGszidRW8kRjoZPd+\
+4t5moIhkHpf4QPUdkv2vPOeSvdDfGl7by4pzRwgtvziyyQXMlVCiiyVsR6FzD2hGb5IWDhJKoYqGkN\
+GYprkqfCjECdokSViHMlYwBjCVCR5BjnjgA+\
+WQu1jHb4tHwDqVpJEizKKdE0B38Qq7J6yvf1wq3K4oW3dHg11XJrGchT6R43r+\
+8ux7EWK9PJhmuRjT2WkSaV5XTILYJ+Ofrf1veUDHBCS7sjoqFTfwUG+\
+8qaxP4SGJXkJ8p0HKXQYjJ1uqFhG2TT9+7+j//7pp3j3SMZBpNIHecz+RXfPtr1ZQq/\
+bYy0yQjxPTzYSXTw4xw+AgP3+LrGMTEXpbFP5ClYauHfvm3fGLzxUMXGpfHseb5KIl1s6D6P0czXV/\
+bPWWmbuJ8HUm6X/Lw7zeM/\
+7bvERTonYBVNteBnYoxeTQHmNLan3zHdvdhnOIyP5EeXTXhoGhNuayoZJcf6FldiP8kBZd1JTgYsr8\
+RAyYOe6pXQhVjwPs1BG7MQUFMdZH3CfJGmgCydxBmTBkAFDpd4bXjaNCBeI21p+\
+kr5Yvd5dkwd0igdTjQfW3732M8ChF8aHbiV7Ktbha6+9/lrb+wGer+cZ/OCRbeQmZ/HarK8R+w4/\
+LkWnF+El315T6UCtgc9kOo7O762FcTjKR8XSLRNB4FLeWIMUou532uToWKO9N7u/\
+ge6Cnri70vZmmOBLg3HWvpO0b928dad98+\
+P2zQ8RMtYQ0MJREsiCoTMvwR0XHZjJRrbeBeiqQkSBXq6G8R4wNsfDnVIgiBS7s81V78Ywy8Z6YW5O\
+jsMOnEksw46fjOb25+d8CHfOL1bDb1wiIM5Z3E8OVJ2BZ9fTcBDG3rkn8V6cTGKw1Aa8B3I/\
+IexKvXiblNVF7gzREl+\
+tlsxuRDKMSbWgaGRz5COPmvK7Vv8h29Kaz1FshMy3EtrvxNa0oW6XHhKrdo+\
+soXBS2YGQfd5BpfDtRUlG0m3QIoSjUVgP1u8Yt0dvjeLpy0fOPLwEpmceFe73z07Y4xaAaOZRCYON7\
+8qRbcesOsbz/MikNdZFJaklHn4v5NwLOvzD45dQWEOYZk0kKdcXVbz09w+/Mu4+\
+qDHvklm0AkNOx6kiHThrjLaAvSFBH70p4uw5m5OVZ71lnpid3j+\
+cKQJnfGrk7IjGlxQzKV3E6l8nPRHWIqeNmyLpV4NrR9xXAmmb9MnIRGpiAUVg2pLaLEqEZcJRwMQfA\
+7IldO4PhdQCVpDy5olSey080SoTcT7qqRTLgyoaQZ4yuI7YolwFVNAJvIKgxwQFqFZ2EACyLIQhMQm\
+zIb/LkZOIHDRH1aWgnIEAc9rVD00SQSu0zbwYBJaL/TCJOC/E0qkYD6caKWckfNgh+B0i/+\
+g0HivkQoIzHQOHDmAxdRpt8lL0cQueCpBUf0ZfcJ/Xe79GBVBkzn+S5h+\
+7NPvf0TOcCCNjHvXCuJLQNIxJfp6AfW7VpRWEzZRel8u2EMfN0mLZRcQzWU3aEd0/\
+2FSgyleoNnxEDbi5FGIj1+AywPecp+\
+PSzqWc1uu9RS9z5I4vDq3F0q3pGP7OaCt8kqfioJYpVL3ZBRxIDncJh/bKTPhtb5hMOG0If3PI//\
+3AG6MoqwIs8o2imvSyZGxyliKEvrn8eGlrfX11sbu66p1tzKkD5Xszc8ANOSj4qJCSxwMTAYq0gBRT\
+RjZfB4UoPXoqsDHLonppSyLnybi8MnZYrwvIRolFSGrSPv/3H4jHF7aQqy+\
+W6lLd8j6jfj8PAJaTHBCsUgqob/MbsMTkgWdtWgS52Ji3fCApA3G+fUqBhyP1KiFqFxUZf+\
+3U99zrTZWlU8fTgki8rAGv7W1UEuU68Xi+PjbZBvLDt2zs7Ubjoeye4eKNGxMb2FiI7/\
+yDJApqTy4i2cSD+1PE6YQM92f3L5JuHyrKiyyZMpt3uTeigmUIGhXrhsyGhzJYu2BTycC8PdOlyH/\
+JPue04Oi2i90x8rrgyeaKZYRD8oOyPK8Ld/FTZHvHcOe7G9C4Q0t/BGaikH+gUN2rlKruIm2PM5uV/\
+1sHjMMiT8mUV804pLtwUpldrGdtOULV/3nHovpTgF6BDXPubjH0zj5MkgHXHThiZYQ93/\
+Y5VVuu50qXqq9YnevOg14X3S9NZcSltS986lLAxxlnzjz8IYpz07k44rcKj7POUaC66WRnVzOLAgHy\
+e+Ry36KnRe5ml57dSsahX3a3LpB6UQBBtpdSm2EGCzbIyD/Auf6e56dJFGHBU0S6DfLgBagZ6qx4V+\
+Y/+XD+k4/uqvbNm/J2+47sq/Yn8uZHbf/Ordv+vApuzvfuIPOznaqiE/\
+NFqEMg5pprRe18So1xCvsq9QdSZjnheu70OPEGs6d/3p777lLi59y3IOirSMjzsfd+\
+7aFTwENCqlrKUW2tmUjd85zsOMDcJZlJEv/5orqxvThSr5m6fp6zNuD9+1/\
+8KeP64864Gj8Wpq6KxAptyW0a1XCCC6mgIv4SXwhvabDOhmmSD+irHisf6YCwyiNI6YXrJxCDcBz+\
+ROEe9R9TNcgjmYrYLhDqwFfjDLwRQ5KBBUZ9A5yNhEL4VJ6KyTD0K0zzIT98IHpQ2gdiZLWSHuBVd0\
+Vcg55cZ/mUL/\
+EICHCnTfTBgRLeUOJRT0GWvmm9gvlGVULoDHJKs77A2jca3hEecjHQE01bRjGLs1jrnVNG/\
+jCtQGZYFdg9BfWh84nLgemYGgQcgh2BKt6IDk8nSUoopKAlsyeLUa4zIQNYtXIb+\
+wlFJYI5yEM4ICTUeqHRuCHY1lKXeEKuUYTDxVimmpROi5FM94JkEhsFZONhvBkHgxHsJuGDnSiKPXo\
+KB3VASJidhjHFcR2xHGukfbxZaV+\
+OFYnb5t90eqxUQGbLti6ChNgOJPWwArOCpOGNMmlYy22bwF3TestOqF7E9hdhK/\
+4O9V6FbxaNMHM63kOs0ZHUwwWxcwMco3DDZlSjhdUAUtS0I0r8PTJ6qifIqaQwEDZ6Z++pUgwX+\
+rCnjUMwXVPmaWSdLjQdWijHyG59CpULjd3dXfeyQcDpgUVJTGy4pOcAV0evJZIYejcgdTdiI4C89s/\
+F4+UvljcLDJor8Xan03m28FlTgJlNRBT+jq+R7CkYoBU9H8QKQ0LpFUB700IzgFt39Wn3S6/\
+ChJiUz20GN4Ik510FO8hu95MQ2ofCD+qaTc1C37RmBWoNKK/Y3V2b2m4tPrmyb/\
+vgmWEJBWboBfapg3FqZkQaSBGLVuWW+iWzvUALGI8cPhF5JR0OYpxy5crBr26Jn4jpr25duQK4K/\
+2T5O7zHMafEu8NDN1ioVg6YRtGt4LqEVCqK5980vnkboeAr22sb251H29drmmZhVKqreOVuLZ7naRR\
+gSeuXbkurDNpOeafrNOwQGMsC2IF/\
+pVGFPBbDidBGECayMAZDxgcKi4SkIW4s0vH71yhIILIF00vgwrqEMPWjEeixS4cuGQC+\
+FZyF9IXI5a6ozK+Y0Fss9Y9uzaWfqSyhTwNr9fMfKExe0Nsb5HqFYsQ4eb4yXV+\
+WRy8vk89dDUpFrI3nHPv3WuziyefwmM0ig0Zjf0Qlub4rXl53ZmgG8ER+\
+keI1tNRD2ldKRwjVVY8SW6jzhVYCULmOlltYCN1sZPsjQyIdOZIVNPwLcfFsGOjVoutgI046eMBmXE\
+Q9pkMG+gmFH+L6AjomjnOQ0gTcdn106oCj/2wTAaUSR3ZNTSLiXLTBvPi+\
+B45LZ4yq6BMizT3bwQNnTti0exAdSn5qewl1p1VcgSTqbArM3E7TfYhY8TDgNvQJiUyfOxRTlFs1YI\
+G5zQfMPQiCuVYbYk6lCVkHPFIAB5bIr738jDK2mGR0fatS5I0Iu+\
+ILvs0qNEesyiPacpruNS3aYHNWlXA2dgRDeL6TjwsAjjF758rNTbOVIdkDSZmjBPNNUyD5VTBhNgxA\
+FBq5YBqnCUDilRjGn5QKhthy5IJs8h6yaEMoqSHjfvgOclQmxPC7KrmVbGiqYlMp+\
+Tro4mcak4BjEMgX21iUkyjQ3bBlDmwCy0hXlOdQUdQTyFdhHOPFqVWZFQmXSVw5B8oXslxmAEZWCJn\
+COB6KbPD8GjfrkRaFm/viQP48H/522e7VaJ3u4de0plmji5GYGkan2zFkjNN7lg46/\
+dTZfLvcZRk8P3QOFQ1hmhXWNgISrsjNYDxMA0juWcdgZI6NNqFoAQKUWkGJuoUmhdSYkR3Q5iTlEbr\
+PMqqdLE6GNUPcp8gQ8XNspZJlQFrYij7yuUTXylX4mFrEpXStBaOx3nKztolGtQa7BQhkQ1vkLAftx\
+RJhiRItysJFrwZ0sX7yw/WN5cJeHHLgOCz4lP5e0wNwk5N+\
+qRunNZSkWyLAUo8OQExNm8cZjyAEPpU/YoA/\
+qclaPiYZ8iF8KxDOyMT1lhwqh7XERglVRmESgZitHMvWnzurT+uxClpHlA9NpLA/\
+xGl3cQM9iH7EjUBuT6Dri0ew5SsK4F/JG9ntlI+zpRT53KhHg2+\
+irjqb9grFHZJrQUgVu2S8rLHAgo6OPE8il4UgsfkkjoNjxFZaHzdmG1m07FqLjQTbtg2W3hiTDoLlW\
+4uYMVsMwzsp2K1cde0Gs+\
+CEhO8WkfSl5Bdpc6ITCJn8pcqMk82VyiwoARh7vSoXBqBP5AbmfVVDuxXW+\
+JqGex35txDQDv6vHUoeO/MUbtCtzj6my9rMg7HecQYXG0C/+\
+eN2edEtWsdNBe2Hc2N2WeN56cIS9ueyqni8opFVYHxTRpTo0cwSHi1F0hOA+2xylxmqyE/\
+uqcmDA6vLFLEn3T68kLtQoYZRY2yZjF9F2BGci0Xk1/iTAJWdpWMI51aVwEzC+HnT+\
+G5Qeoo12u9rkPMPvSuyuMtUzonEfd1tDYhDVZJ3nTgRsvOpyCeuxaMbcqQZ7VdnhH1VVRM91kqOWyt\
+e2T6DnxcYsYi1CgxaQ0WIlFQpjp12Q9VrcjUqTNjo3j1RIJfPTXh/\
+kktIa5RUeACOggdcfXjq7CnPAqIOArg1VPI09FKQ2mHugNcgtM7Hx4PenM4D3L0ulaZa5P1VDahBHS\
+efd7dmy1e6rplDh194o75m62i1Vbrv9lmWkliga8NBhQgD8O8aWB+/Kr2wKQRoi9vE+ZkVmd63XQk/\
++4QClKZD/bt7wLtePMqaazje/LZR01xonpf9U2j+ZAhPlU98cC9qZohP6y2vkiU1J/\
+m0kcbPZOIBquv7MXyNHp5/\
+pB54pCS3aat9GoAaJVJvbisMokptsCxiWs7TR4BEJE73FPZaXIjngplvdO8fopsiJIqUsdzntl2Utg\
+hAfBxJ4Qc89TkhFjad2J49XzgFYOHPZh3sQb8DiGAqD+F7peh+\
+P8FmTZZlzScOUynefdN17yrEkq133EBmm6Rmxq7tpm0lvo7+\
+bidJe2AYpFJmaUtHk0NoanwRipMBR2xhRwwcZBGYNOWnTzAsQ8UlZr42hJDcxkUHj2llgMWJnEymho\
+PTynhty0EkjUn8KWZo1wav0L+6lIEGjMMk4mg7e3etE1/\
+o6CJePT3e4j2aB12vJzLRHC5XFgVun2sjm7gurDauCfJySLVFuZSvElY+\
+HWQKFPk16cX1GEyUzVSh07ZL9ijNMXN9ahL6FDhZhVnE1wCVpvdRfl6qK9KUT1FCewQHpkBD3UxO1R\
+yysowwsHQrtsTmI5aMYegiOJKX3nsYUXxDE3gkV2euUEctMbwpKyQtf2VQDkT21eF73e1flFSWNK5f\
+k3pmLKIjRKa0fVRicLdbtDQ5ajBmsKTzXX3v//qr7etKj3bbVUSHphnMkhyBupnadT+\
+zO4Dra7ppztQpWOBE+\
+fMxMfOn1RxU4OHO9Q5TtI9O7obST9NqK0uY82TT6IORkFJpe04G1YD7AnUAMukl3Ho50LdAN79RU7V\
+SzYFabtLxbU9+rbsnlPt3nhVb0H69/KmfrzhVPT5FDPnk6yV//jH4gEV3zYv17D7WoebmgQ9+OK+\
+7dKaX4UUy42uBmpkJrgwI/\
+I71Tmb6SmwEdcg1KbK4Fa73W40Pv0mHH3Fud4393g2sxHBaFG0XDu4bpKt9l0i8i4vVHHwzb36Jumu\
+PjTcNbFTvReJxvC9SSdtU6vt4FlLfH3Qwkktcfd5S3QPlF6llpho3xNf7zQPdpotZEcGqZ3m8ybYuP\
+x4qbv58Mna8uMtr1G5o9ag/tNJuJoWbINmV/Gzz8TlbU5pnl2Dv0C9SSXXwtycNdj212Hw/\
+PqLqabGzlVtJ/tgHZzFlSs7wPXrg+dXrtRYuNC4vE1En3bgEfyPl9IjyLwvUZpOEAlgUI+/\
+XDRH3U8QU+Of/uGl9VAlS/YXcNvkb3aa5qiWWOvuNCFB8/CxmsDw0z2xCMPE82e/r7Cc8W/\
+Pf3inc2e+JZpr5Bebz15M4gp1o802MaJNVRaRRGrIdk7FhrmOALMCP2djFFzFmMzs9lDMfzRqsR32k\
+cWICdz8iul6fguCMHy2ZDEvwGaxM2cFYLDBoz8Y4+/\
+e7Nz8qGS8mBPNR4iTLyUCigETVfSADSgrDJoEIDykL8H4pzxtooHjhOPJCrwk/\
+WiRuiIrIlL9TKThYJghqE2+NZYbzrqJ2eRVWcyGjByPO9+\
+2C14Z91UjQMaXdZhe1N1FK9wlJtQSLij4lJtI1DS9xyh/Ona/\
+YuCHYv5eE4uIKvp8zIJblQW37p1GUaMyycH6MDA9bsrAeF5lJvwFeDOadG0uorrjpgeG1uLlVV3tlr\
+8SwAc0JbSPmQZe9Ok9hFDp71ELtAh79rVLdcfUAvP5rhHB64gNNxOkmyN0Wao8V+\
+ryXBvadUEMTzWSuIIWS5DlVyyycp4kgi869JDxIXFyeVUxVGCiTEZg54U8BlXmMm5xa43HgdXz7LyV\
+F7sLTNKBcLNKeymhvP5mEvUvbe5AP2YuUzSbPdOFGmzRw2LAU8+\
+Rq4WDQVzbOQdq2nZPaoundmmpyVRotFvOjMzc1V4X4lqgNIuSyKUnmyuPH5rzF59sbkI/\
+K4MZW25w89TkSAVDiCY7dSJGFaMrx5fqFSsI0/GnPNnSaC8fVgXTlyGtybh4HQ9NKQQ+\
+cCnC1RLqHzOBp+kdI+\
+KGu9YD0Lu1J96WoKplNM7cQqbBNqRLobfo9kXs7jBRmrxnbnDYCzeUkHfcZJB3E4ralDmk1SpNkwrp\
+ibsmxhtQpOXcPUYazy24yXBK4AmGCjr2TlCFx8UwLy5u+\
+9hrYLJmYFQFuiuJtslPYMNUWwUM4E34AoOZumWsR1ZxrGLYe170q7/i+\
+sGUNZekalEIko6ZC9rKI0un5dWhkZk2mxEDJcnQQfaBR0o/c/nKlH+\
+Ql9yznWUqdE2fw8zr3Az96BWzjC/\
+acexzfeevZBCotCJ2E8zcOZmM9izwJt1LAJZmn2523DiVjcOS4ZhviTAgLdlunlv5dbUdvmfTWl3rt\
+IQgkN6Wd41YhUsbYDXiXpC7LYbyiG/PWk/BQo/puoLUlBYWem1seY46n9NjzCwm6yvOQWwzK08IcZ/\
+GyNlKz3zvlGjFEx02jGFoU7ZxqvZDUw87umydFEVyTKqrzZ10a33V26T0u1Ur2Glx2ZBaD+\
+M0JNKN9aJgt6Ji11CMnXWrhGZw4rk1/koDE+\
+lJr3k8ZC6yOgS1c9v2dp0xVttz6zT4KtCpEai8fz1Dt3Mqt6936AKNeKQQi6FgVhu55D5yCZp0ZTSt\
+jFe48d8Ri5Ith/\
+9hALoiZoOtzH5aHjtb3I6vnP2vZ9apwEUaqS4LJEUMgCAdvtBdXAw5dHZLrFwln8dzqFr6VLnNDW2a\
+74gbN7zq7O3GjQXRPWkg5QZuRhIqrlwVLXGiaz1qEMadxi2CvmRnIwR4qzrOqt/\
+wLodbh2dancZtgtOtDLQcrNOHXCbEGVU8hnEu5lqn0FMnj8Bg++\
+s0OVwximlvlhWMBCTFVsBXgtxdrOIqe3nsKeo2ZHU7QhQOuk3qZ/\
+B308asMsCTZowobhsGYMNUybRT5zWe3jL87bxA9f75fOla6gNhyp8rs73mbe4blaO65i1+\
+cPzkDatPS543l70nq1sNOsqQtf3U2HyhYfaWCs36gY2fHVZ7sgRLYjnALXjDYZI6Q3J6a768VZ+\
+TDLM8RlCFo6hOdjuc97FiVM4EY+lXc0XAcbekD7037v3I7mMwzg4ZxHEUUNgA3oVS0mdjG/\
+zp9vGoUg/1ZET57beP5t27JZ7zH3WekcytqFcyCg8j27ErAL2Eb3OmcbuYz98mWdakJx4lE7oI17KZ\
+BuXcOoELlhEIh7wRpnXRF6TfeyAIpjWH6IRJvqbkMHu2w1jK05lzouCMgzSnsUTqZ8kISusPk8T+\
+UoPXvdTRp8ig0VhVlCQZ60LEJrkZ14lj3N07/omEFQBfEHI/C6hFQcqDKV9JeMpjmE//\
+uFGo9Cme7n9f393dnUSNJVO8l21zQmMl3r7zbOEz0fSAZVmLEwhKcZqNF2zr+\
+jJQI5QPUegrylXbTEacxG26EaVSvl9LCSBf7m8TDVSvils3b33Yvnm7PT/f5F8INNgfF6Gxen/E+\
+BFx90PLjoJZuS5jPnQKCfzIeGQeBLwo6P/XmZf1vB//\
+np73Ba73S4UofPQ6TcVFlL9KKaptLucrBn5tMhj2htcbDa9q2lU2vti+C0a7UM0JHhUh5g4oG//\
+HLULUsttECfoxTuEJXAFfi82HrIhv5JjCk35qcNSiTNE6LW5Uwmb4Vp67ucVX8jjb6uepuRZV/\
+JNodKFSoUSgH7BQsaX3Lre9t6r//s5pP238P/5XKN0="|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"94cc3945-3647-4e7e-a152-ee77bf0245ad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Set parameter Username\"\>"], "Print",
+ CellChangeTimes->{3.955533156716408*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"d839e351-8cb2-724d-851a-78e20c233cea"],
+
+Cell[BoxData["\<\"Academic license - for non-commercial use only - expires \
+2026-03-11\"\>"], "Print",
+ CellChangeTimes->{3.955533156719408*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"e88e7117-8a2f-9c4b-938c-6754155da9e6"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{581.25, 654},
+WindowMargins->{{423, Automatic}, {Automatic, 85.5}},
+TaggingRules-><|
+ "ChatNotebookSettings" -> <|"LLMEvaluator" -> "TransmissionSystemOperator"|>|>,
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
+StyleDefinitions->"Chatbook.nb",
+ExpressionUUID->"e350bdcd-153a-ec4e-b585-14fdeff50606"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 560, 16, 69, "ChatInput",ExpressionUUID->"b9cd975f-aa20-774e-a1d1-ea443f644fa4"],
+Cell[1139, 40, 18566, 310, 284, "ChatOutput",ExpressionUUID->"14ad28fa-b798-49aa-8744-2b310cd1a97a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19742, 355, 594, 16, 69, "ChatInput",ExpressionUUID->"cec48f7e-de3e-8e4d-88a7-255523c3ae5a"],
+Cell[20339, 373, 70502, 1389, 303, "ChatOutput",ExpressionUUID->"dab85505-fe9a-4d9d-96bb-3b84f80298f3"],
+Cell[CellGroupData[{
+Cell[90866, 1766, 202, 4, 22, "Print",ExpressionUUID->"8e5d6b0f-dccb-4d4f-ae66-98240ae661df"],
+Cell[91071, 1772, 251, 5, 22, "Print",ExpressionUUID->"df12652f-ecce-2344-a95b-713862fb0215"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[91371, 1783, 578, 16, 69, "ChatInput",ExpressionUUID->"2eabf95b-b4bd-984e-88d3-834412092d2d"],
+Cell[91952, 1801, 67638, 1348, 220, "ChatOutput",ExpressionUUID->"94cc3945-3647-4e7e-a152-ee77bf0245ad"],
+Cell[CellGroupData[{
+Cell[159615, 3153, 202, 4, 22, "Print",ExpressionUUID->"d839e351-8cb2-724d-851a-78e20c233cea"],
+Cell[159820, 3159, 249, 5, 22, "Print",ExpressionUUID->"e88e7117-8a2f-9c4b-938c-6754155da9e6"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
