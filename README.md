@@ -3,7 +3,9 @@ Tools and prototypes for automating customised electricity contracts using large
 
 ## Publication Customising Electricity Contracts at Scale with Large Language Models
 This repository contains code for the paper:
+
 *Jochen L. Cremer, "Customising Electricity Contracts at Scale with Large Language Models." [arXiv preprint arXiv:2505.19551](https://arxiv.org/abs/2505.19551)*
+
 Cite this paper when using this code.
 
 ## Repository Structure
